@@ -3,9 +3,9 @@ import React from 'react';
 class Start extends React.Component {
   render() {
     return (
-      <div>
+      <main>
        Hey there!
-      </div>
+      </main>
     )
   }
 }
