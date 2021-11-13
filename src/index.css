@@ -1,0 +1,38 @@
+/* @font-face {
+  font-family: 'Lato';
+  src: url('./fonts/montserrat-v15-latin-regular.woff2') format("woff2");
+}
+body, button {
+  font-family: 'Montserrat', sans-serif;
+}
+*/
+
+:root {
+  --primary-light: #5ECE7B;
+  --primary-dark: #1D1F22;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  line-height: 1.5;
+  font-size: 100%;
+  font-weight: normal;
+}
+main {
+  margin: 0 auto;
+  padding: 1rem;
+
+}
+button {
+  background-color: none;
+}
+
+
