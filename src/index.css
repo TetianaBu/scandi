@@ -1,20 +1,47 @@
-/* @font-face {
-  font-family: 'Lato';
-  src: url('./fonts/montserrat-v15-latin-regular.woff2') format("woff2");
-}
-body, button {
-  font-family: 'Montserrat', sans-serif;
-}
-*/
-
 :root {
   --primary-light: #5ECE7B;
   --primary-dark: #1D1F22;
 }
 
+@font-face {
+  font-family: 'Raleway';
+  src: url("./assets/fonts/Raleway-Regular.ttf") format("ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url("./assets/fonts/Raleway-Bold.ttf") format("ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url("./assets/fonts/Raleway-SemiBold.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url("./assets/fonts/Roboto-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: 'SourceSansPro';
+  src: url("./assets/fonts/SourceSansPro-Regular.ttf") format("ttf");
+  font-weight: normal;
+}
+
+body, button {
+  font-family: 'Raleway', sans-serif;
+}
+body {
+  color: var(--primary-dark);
+}
+
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -24,15 +51,14 @@ html, body {
   margin: 0;
   line-height: 1.5;
   font-size: 100%;
-  font-weight: normal;
 }
+
 main {
   margin: 0 auto;
-  padding: 1rem;
-
-}
-button {
-  background-color: none;
+  padding: 1rem 3rem;
+  max-width: 1440px;
 }
 
-
+img { 
+  max-width: 100%;
+}
