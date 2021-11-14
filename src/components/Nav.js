@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import NavStyles from './styles/NavStyles';
-import logo from '../assets/logo.svg';
-import emptyCart from '../assets/emptyCart.svg';
-import CurrenciesList from './CurrecySwitcher'
+import logo from '../assets/icons/logo.svg';
+import emptyCart from '../assets/icons/emptyCart.svg';
+import CurrenciesList from './CurrencySwitcher';
 import { NavLink } from 'react-router-dom';
 import { Query } from '@apollo/client/react/components';
 import CATEGORIES from '../apollo/categoriesQuery';
+//          <CurrenciesList />
 
 export class Nav extends Component {
   constructor(props) {
@@ -27,12 +28,7 @@ export class Nav extends Component {
                 <ul>
                   {categories.map((category, categoryIndex) => (
                     <li key={categoryIndex}>
-                      <NavLink
-                        to={category.name}
-                        activeStyle={{
-                          color: 'green'
-                        }}
-                      >
+                      <NavLink to={category.name} activeClassName="nav-link">
                         {category.name}
                       </NavLink>
                     </li>
@@ -47,10 +43,8 @@ export class Nav extends Component {
         </NavLink>
         <div>
           <CurrenciesList />
-          <select>
-          </select>
           <NavLink to={`/cart`}>
-            <img src={emptyCart} alt="logo" />
+            <img src={emptyCart} alt="cart" />
           </NavLink>
         </div>
       </NavStyles>
