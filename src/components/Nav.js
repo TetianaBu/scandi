@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
-import {NavStyles, CartIMg} from './styles/NavStyles';
+import { NavStyles, CartIMg } from './styles/NavStyles';
 import logo from '../assets/icons/logo.svg';
 import emptyCart from '../assets/icons/emptyCart.svg';
 import CurrenciesList from './CurrencySwitcher';
 import { NavLink } from 'react-router-dom';
 import { Query } from '@apollo/client/react/components';
 import CATEGORIES from '../apollo/categoriesQuery';
-//          <CurrenciesList />
+import { CartContext } from './CartContext';
 
 export class Nav extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {};
-  }
+  static contextType = CartContext;
 
   render() {
+    const { itemsAddedToCart } = this.context;
+
+    const itemsAmount = itemsAddedToCart.reduce(
+      (aggregator, current) => aggregator + current.amount,
+      0
+    );
     return (
       <NavStyles>
         <Query query={CATEGORIES}>
@@ -27,7 +29,7 @@ export class Nav extends Component {
               return (
                 <ul>
                   {categories.map((category, categoryIndex) => (
-                    <li key={categoryIndex}>
+                    <li key={categoryIndex} className="categories-nav">
                       <NavLink to={category.name} activeClassName="nav-link">
                         {category.name}
                       </NavLink>
@@ -43,9 +45,14 @@ export class Nav extends Component {
         </NavLink>
         <div className="cart-currency-wrapper">
           <CurrenciesList />
-          <NavLink to={`/cart`}>
-            <CartIMg src={emptyCart} alt="cart"/>
-          </NavLink>
+          <span className="cart-wrapper">
+            <NavLink to={`/cart`}>
+              <CartIMg src={emptyCart} alt="cart" />
+              {itemsAmount > 0 && (
+                <span className="items-amount">{itemsAmount}</span>
+              )}
+            </NavLink>
+          </span>
         </div>
       </NavStyles>
     );

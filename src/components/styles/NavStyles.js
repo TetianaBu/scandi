@@ -20,17 +20,37 @@ export const NavStyles = styled.header`
     width: 134px;
   }
   .cart-currency-wrapper {
-    width: 134px;
+    width: 114px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
   }
-  li {
-    padding-bottom: 1rem;
+  .cart-wrapper {
+    position: relative;
+    padding-right: 1rem;
   }
+  .items-amount {
+    position: absolute;
+    background-color: var(--primary-dark);
+    color: white;
+    font-weight: 700;
+    font-size: 12px;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -20%;
+    left: 40%;
+  }
+  .categories-nav {
+    padding-left: 2rem;
+    padding-right: 1rem;
+  }
+
   a {
     text-decoration: none;
-    padding: 1rem;
     color: var(--primary-dark);
   }
   .nav-link {
