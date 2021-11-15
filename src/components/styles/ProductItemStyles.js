@@ -44,6 +44,7 @@ export const ProductItemButton = styled.button`
   position: absolute;
   top: 90%;
   left: 82%;
+  cursor: pointer;
   visibility: hidden;
   .cart-svg {
     height: 24px;
