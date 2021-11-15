@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NavStyles from './styles/NavStyles';
+import {NavStyles, CartIMg} from './styles/NavStyles';
 import logo from '../assets/icons/logo.svg';
 import emptyCart from '../assets/icons/emptyCart.svg';
 import CurrenciesList from './CurrencySwitcher';
@@ -41,10 +41,10 @@ export class Nav extends Component {
         <NavLink to={`/`}>
           <img src={logo} alt="logo" />
         </NavLink>
-        <div>
+        <div className="cart-currency-wrapper">
           <CurrenciesList />
           <NavLink to={`/cart`}>
-            <img src={emptyCart} alt="cart" />
+            <CartIMg src={emptyCart} alt="cart"/>
           </NavLink>
         </div>
       </NavStyles>
