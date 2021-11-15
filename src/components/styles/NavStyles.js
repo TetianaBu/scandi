@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const NavStyles = styled.header`
+export const NavStyles = styled.header`
   margin: 0;
   padding: 0 2rem 0 2rem;
   position: relative;
@@ -19,7 +19,7 @@ const NavStyles = styled.header`
     padding: 0;
     width: 134px;
   }
-  div {
+  .cart-currency-wrapper {
     width: 134px;
     display: flex;
     justify-content: flex-end;
@@ -30,7 +30,7 @@ const NavStyles = styled.header`
   }
   a {
     text-decoration: none;
-    padding: 2rem;
+    padding: 1rem;
     color: var(--primary-dark);
   }
   .nav-link {
@@ -39,4 +39,7 @@ const NavStyles = styled.header`
   }
 `;
 
-export default NavStyles;
+export const CartIMg = styled.img`
+  width: 20px;
+  height: 20px;
+`;
