@@ -1,16 +1,59 @@
 import React from 'react';
-import CartStyles from './styles/CartStyles';
+import {
+  CartStyles,
+  ItemInCartStyles,
+  AmountWrapper,
+  ItemDescriptionStyles,
+  SizesButtonStyles
+} from './styles/CartStyles';
 import { CurrencyContext } from './CurrencyContext';
 import { CartContext } from './CartContext';
+import { getCurrencySymbol } from '../lib/currency';
+import CartCarousel from './CartCarousel';
 
 class Cart extends React.Component {
   render() {
     return (
       <CartContext.Consumer>
-        {({ itemsAddedToCart }) => (
+        {({ itemsAddedToCart, addItemToCart, removeItemFromCart }) => (
           <CartStyles>
+            <h1>Cart</h1>
             {itemsAddedToCart.map((item, index) => (
-              <p key={index}>{item.product.name}</p>
+              <ItemInCartStyles key={index}>
+                <div className="item-description">
+                  <h4>{item.product.brand}</h4>
+                  <h5>{item.product.name}</h5>
+                  <CurrencyContext.Consumer>
+                    {({ currency }) => (
+                      <p className="price">
+                        {getCurrencySymbol(currency)}
+                        {
+                          item.product.prices.find(
+                            (price) => price.currency === currency
+                          )?.amount
+                        }
+                      </p>
+                    )}
+                  </CurrencyContext.Consumer>
+                  <SizesButtonStyles>
+                    <button>S</button>
+                    <button>M</button>{' '}
+                  </SizesButtonStyles>
+                </div>
+                <div className="row-with-gallery">
+                  <AmountWrapper>
+                    <button onClick={() => addItemToCart(item.product)}>
+                      &#43;{' '}
+                    </button>
+                    <p>{item.amount}</p>
+                    <button onClick={() => removeItemFromCart(item.product)}>
+                      &#8211;{' '}
+                    </button>
+                  </AmountWrapper>
+
+                  <CartCarousel>{item.product.gallery}</CartCarousel>
+                </div>
+              </ItemInCartStyles>
             ))}
           </CartStyles>
         )}
