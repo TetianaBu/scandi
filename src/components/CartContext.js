@@ -30,14 +30,32 @@ export class CartContextProvider extends Component {
       }
     });
   };
+  removeItemFromCart = (productToRemove) => {
+    this.setState((previousState) => {
+      const existingItem = previousState.itemsAddedToCart.find(
+        (item) => item.product.id === productToRemove.id
+      );
+      const newCartItems = [...previousState.itemsAddedToCart];
+      const newItem = { ...existingItem, amount: existingItem.amount - 1 };
+      const index = newCartItems.indexOf(existingItem);
+      if (newItem.amount === 0) {
+        newCartItems.splice(index, 1);
+      } else {
+        newCartItems.splice(index, 1, newItem);
+      }
+      return {
+        itemsAddedToCart: newCartItems
+      };
+    });
+  };
 
   render() {
-    console.log(this.state);
     return (
       <CartContext.Provider
         value={{
           itemsAddedToCart: this.state.itemsAddedToCart,
-          addItemToCart: this.addItemToCart
+          addItemToCart: this.addItemToCart,
+          removeItemFromCart: this.removeItemFromCart
         }}
       >
         {this.props.children}
