@@ -1,9 +1,13 @@
 import { Component } from 'react';
 import { Query } from '@apollo/client/react/components';
-import { CurrenctSwitcherStyles } from './styles/CurrencySwitcherStyles';
+import {
+  CurrenciesBtn,
+  CurrenctSwitcherStyles
+} from './styles/CurrencySwitcherStyles';
 import CURRENCIES from '../apollo/currenciesQuery';
 import { CurrencyContext } from './CurrencyContext';
 import { getCurrencyName, getCurrencySymbol } from '../lib/currency';
+import arrowDown from '../assets/icons/arrowDown.svg';
 
 class CurrenciesList extends Component {
   static contextType = CurrencyContext;
@@ -30,10 +34,10 @@ class CurrenciesList extends Component {
             const { currencies } = data;
             return (
               <div>
-                <button onClick={this.toggleList}>
+                <CurrenciesBtn onClick={this.toggleList}>
                   {' '}
-                  {getCurrencySymbol(selectedCurrency)} d{' '}
-                </button>
+                  {getCurrencySymbol(selectedCurrency)} <img src={arrowDown} alt="arrow"/>{' '}
+                </CurrenciesBtn>
                 {isOpen && (
                   <CurrenctSwitcherStyles>
                     {currencies.map((currency) => (
