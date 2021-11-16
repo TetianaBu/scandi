@@ -8,6 +8,7 @@ import emptyCart from '../assets/icons/emptyWhiteCart.svg';
 import { CurrencyContext } from './CurrencyContext';
 import { CartContext } from './CartContext';
 import { getCurrencySymbol } from '../lib/currency';
+import { Link } from 'react-router-dom';
 
 export class ProductItem extends Component {
   getPriceByCurrency = (currency) => {
@@ -19,6 +20,7 @@ export class ProductItem extends Component {
       name,
       gallery: [firstImage]
     } = this.props.product;
+    console.log(this.props.product);
     return (
       <CartContext.Consumer>
         {({ addItemToCart }) => (
@@ -35,8 +37,8 @@ export class ProductItem extends Component {
             <CurrencyContext.Consumer>
               {({ currency }) => (
                 <p className="product-price">
-                  {this.getPriceByCurrency(currency)}{' '}
                   {getCurrencySymbol(currency)}
+                  {this.getPriceByCurrency(currency)}
                 </p>
               )}
             </CurrencyContext.Consumer>
