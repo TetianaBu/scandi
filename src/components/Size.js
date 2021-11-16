@@ -5,7 +5,7 @@ export class Size extends Component {
   render() {
     return (
       <SizeStyles>
-        <button>XS</button>
+        <button disabled>XS</button>
         <button>S</button>
         <button>M</button>
         <button>L</button>

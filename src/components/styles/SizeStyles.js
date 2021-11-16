@@ -12,5 +12,14 @@ export const SizeStyles = styled.div`
     width: 63px;
     height: 45px;
     border: 1px solid var(--primary-dark);
+    transition: all 0.5s;
+    &[disabled] {
+      opacity: 0.5;
+      cursor: auto;
+    }
+    :hover {
+      background-color:var(--primary-dark);
+      color: white;
+    }
   }
 `;
