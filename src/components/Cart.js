@@ -18,6 +18,7 @@ class Cart extends React.Component {
         {({ itemsAddedToCart, addItemToCart, removeItemFromCart }) => (
           <CartStyles>
             <h1>Cart</h1>
+            {itemsAddedToCart.length === 0 && <p>Your cart is empty</p>}
             {itemsAddedToCart.map((item, index) => (
               <ItemInCartStyles key={index}>
                 <div className="item-description">
