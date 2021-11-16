@@ -1,7 +1,7 @@
 const currencySymbols = {
   USD: { symbol: '$', name: '$ USD' },
   GBP: { symbol: '£', name: '£ GBP' },
-  AUD: { symbol: '$ AUD', name: '$ AUD' },
+  AUD: { symbol: '$AUD', name: '$ AUD' },
   JPY: { symbol: '¥', name: '¥ JPY' },
   RUB: { symbol: '₽', name: '₽ RUB' }
 };
