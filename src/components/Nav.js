@@ -7,17 +7,24 @@ import { NavLink } from 'react-router-dom';
 import { Query } from '@apollo/client/react/components';
 import CATEGORIES from '../apollo/categoriesQuery';
 import { CartContext } from './CartContext';
+import MenuCart from './MenuCart';
 
 export class Nav extends Component {
   static contextType = CartContext;
-
+  state = { isCartOpen: false };
+  toggleList = () => {
+    this.setState((prevState) => ({ isCartOpen: !prevState.isCartOpen }))
+  };
+  
   render() {
     const { itemsAddedToCart } = this.context;
+    const { isCartOpen } = this.state;
 
     const itemsAmount = itemsAddedToCart.reduce(
       (aggregator, current) => aggregator + current.amount,
       0
     );
+    console.log(this.state, isCartOpen)
     return (
       <NavStyles>
         <Query query={CATEGORIES}>
@@ -45,14 +52,13 @@ export class Nav extends Component {
         </NavLink>
         <div className="cart-currency-wrapper">
           <CurrenciesList />
-          <span className="cart-wrapper">
-            <NavLink to={`/cart`}>
-              <CartIMg src={emptyCart} alt="cart" />
-              {itemsAmount > 0 && (
-                <span className="items-amount">{itemsAmount}</span>
-              )}
-            </NavLink>
-          </span>
+          <button className="cart-wrapper" onClick={this.toggleList}>
+            <CartIMg src={emptyCart} alt="cart" />
+            {itemsAmount > 0 && (
+              <span className="items-amount">{itemsAmount}</span>
+            )}
+          </button>
+          {isCartOpen && <MenuCart />}
         </div>
       </NavStyles>
     );
