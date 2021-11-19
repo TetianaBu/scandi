@@ -28,6 +28,8 @@ export const NavStyles = styled.header`
   .cart-wrapper {
     position: relative;
     padding-right: 1rem;
+    background-color: white;
+    border: none;
   }
   .items-amount {
     position: absolute;
