@@ -6,11 +6,12 @@ import { CurrencyContext } from './CurrencyContext';
 import { CartContext } from './CartContext';
 import { getCurrencySymbol } from '../lib/currency';
 import Size from './Size';
-import ProductDescriptionCarousel from './ProductDescriptionCarouselStyles'
+import ProductDescriptionCarousel from './ProductDescriptionCarouselStyles';
+import Description from './Description';
 
 class ProductDescriptionPage extends React.Component {
   render() {
-    const { id } = this.props;
+    const { id, category } = this.props;
     return (
       <Query query={PRODUCT_DETAILED_DESCRIPTION} variables={{ productID: id }}>
         {({ loading, data, error }) => {
@@ -21,17 +22,20 @@ class ProductDescriptionPage extends React.Component {
               return 'Redirect';
             }
             const { name, brand, description, prices, gallery } = data.product;
+            console.log(description);
             return (
               <ProductDescriptionPageStyles>
-                <ProductDescriptionCarousel>{gallery}</ProductDescriptionCarousel>
+                <ProductDescriptionCarousel>
+                  {gallery}
+                </ProductDescriptionCarousel>
                 <div key={id}>
                   <div className="titles-wrapper">
                     <h1> {brand}</h1>
                     <h2> {name}</h2>
                   </div>
-                  <Size />
+                  {category === 'clothes' && <Size />}
                   <div className="price-wrapper">
-                    <p>Price:</p>
+                    <p className="price-title">Price:</p>
                     <CurrencyContext.Consumer>
                       {({ currency }) => (
                         <p className="price">
@@ -54,7 +58,7 @@ class ProductDescriptionPage extends React.Component {
                       </button>
                     )}
                   </CartContext.Consumer>
-                  <p>{description}</p>
+                  {{ description } && <Description text={description} />}
                 </div>
               </ProductDescriptionPageStyles>
             );
