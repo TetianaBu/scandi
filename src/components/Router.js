@@ -29,9 +29,9 @@ class Router extends Component {
             path="/:category/:id"
             render={({
               match: {
-                params: { id }
+                params: { id, category }
               }
-            }) => <ProductDescriptionPage id={id} />}
+            }) => <ProductDescriptionPage id={id} category={category} />}
           ></Route>
           <Route path="*" component={NotFound} />
         </Switch>
