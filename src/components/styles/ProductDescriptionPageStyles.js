@@ -18,6 +18,15 @@ const ProductDescriptionPageStyles = styled.article`
   .add-btn:hover {
     background-color: var(--primary-light-btn);
   }
+  .price-title {
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+  }
+  .price {
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 24px;
+  }
 `;
 
 export default ProductDescriptionPageStyles;
