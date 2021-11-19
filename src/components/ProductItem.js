@@ -20,7 +20,6 @@ export class ProductItem extends Component {
       name,
       gallery: [firstImage]
     } = this.props.product;
-    console.log(this.props.product);
     return (
       <CartContext.Consumer>
         {({ addItemToCart }) => (
