@@ -15,11 +15,12 @@ export class Nav extends Component {
   toggleList = () => {
     this.setState((prevState) => ({ isCartOpen: !prevState.isCartOpen }))
   };
-  
+  closeCart = () => {
+    this.setState({ isCartOpen: false })
+  };
   render() {
     const { itemsAddedToCart } = this.context;
     const { isCartOpen } = this.state;
-
     const itemsAmount = itemsAddedToCart.reduce(
       (aggregator, current) => aggregator + current.amount,
       0
@@ -58,7 +59,7 @@ export class Nav extends Component {
               <span className="items-amount">{itemsAmount}</span>
             )}
           </button>
-          {isCartOpen && <MenuCart />}
+          {isCartOpen && <MenuCart onClose={this.closeCart} />}
         </div>
       </NavStyles>
     );

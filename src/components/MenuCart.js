@@ -77,10 +77,10 @@ class MenuCart extends React.Component {
                 <p>total</p> <p>sum</p>
               </div>
               <div className="action-btn-wrapper">
-                <button className="btn-view-bag">
-                  <NavLink to={`/cart`}>Check Out</NavLink>
+                <button className="btn-view-bag" onClick={this.props.onClose}>
+                  <NavLink to={`/cart`}>View bag</NavLink>
                 </button>
-                <button className="btn-check-out">View bag</button>
+                <button className="btn-check-out">Check Out</button>
               </div>
             </>
           )}
