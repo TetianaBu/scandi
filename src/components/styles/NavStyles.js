@@ -9,7 +9,6 @@ export const NavStyles = styled.header`
   align-items: center;
   align-content: center;
   flex-direction: row;
-  text-transform: uppercase;
   height: 80px;
   ul {
     display: flex;
@@ -57,6 +56,7 @@ export const NavStyles = styled.header`
     color: var(--primary-dark);
     padding-left: 1rem;
     padding-right: 1rem;
+    text-transform: uppercase;
 
   }
   .nav-link {
