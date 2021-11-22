@@ -24,7 +24,10 @@ class CurrenciesList extends Component {
   render() {
     const { currency: selectedCurrency } = this.context;
     const { isOpen } = this.state;
-
+    const onClickOutsideListener = () => {
+      this.setState({ isOpen: false });
+      document.removeEventListener('click', onClickOutsideListener);
+    };
     return (
       <Query query={CURRENCIES}>
         {({ loading, data, error }) => {
@@ -33,10 +36,15 @@ class CurrenciesList extends Component {
           if (data) {
             const { currencies } = data;
             return (
-              <div>
+              <div
+                onMouseLeave={() => {
+                  document.addEventListener('click', onClickOutsideListener);
+                }}
+              >
                 <CurrenciesBtn onClick={this.toggleList}>
                   {' '}
-                  {getCurrencySymbol(selectedCurrency)} <img src={arrowDown} alt="arrow"/>{' '}
+                  {getCurrencySymbol(selectedCurrency)}{' '}
+                  <img src={arrowDown} alt="arrow" />{' '}
                 </CurrenciesBtn>
                 {isOpen && (
                   <CurrenctSwitcherStyles>
