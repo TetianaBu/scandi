@@ -49,15 +49,20 @@ export const NavStyles = styled.header`
   .categories-nav {
     padding-left: 2rem;
     padding-right: 1rem;
+    padding-bottom: 1rem;
   }
 
   a {
     text-decoration: none;
     color: var(--primary-dark);
+    padding-left: 1rem;
+    padding-right: 1rem;
+
   }
   .nav-link {
     color: var(--primary-light);
-    text-decoration: var(--primary-light);
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 2rem;
   }
 `;
 
