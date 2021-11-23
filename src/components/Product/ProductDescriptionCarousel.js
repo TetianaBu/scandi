@@ -18,7 +18,7 @@ class ProductDescriptionCarousel extends React.Component {
     } else {
       return (
         <ProductDescriptionCarouselStyles>
-          <div class="gallery">
+          <div className="gallery">
             {[...this.props.children].map((img, index) => (
               <img src={img} key={index} alt="item img" />
             ))}
