@@ -13,11 +13,12 @@ export class Nav extends Component {
   static contextType = CartContext;
   state = { isCartOpen: false };
   toggleList = () => {
-    this.setState((prevState) => ({ isCartOpen: !prevState.isCartOpen }))
+    this.setState((prevState) => ({ isCartOpen: !prevState.isCartOpen }));
   };
   closeCart = () => {
-    this.setState({ isCartOpen: false })
+    this.setState({ isCartOpen: false });
   };
+
   render() {
     const { itemsAddedToCart } = this.context;
     const { isCartOpen } = this.state;
@@ -25,7 +26,6 @@ export class Nav extends Component {
       (aggregator, current) => aggregator + current.amount,
       0
     );
-    console.log(this.state, isCartOpen)
     return (
       <NavStyles>
         <Query query={CATEGORIES}>
