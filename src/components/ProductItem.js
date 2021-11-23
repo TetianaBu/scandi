@@ -6,7 +6,7 @@ import {
 } from './styles/ProductItemStyles';
 import emptyCart from '../assets/icons/emptyWhiteCart.svg';
 import { CurrencyContext } from './CurrencyContext';
-import { CartContext } from './Cart/CartContext';
+import { CartContext } from './cart/CartContext';
 import { getCurrencySymbol } from '../lib/currency';
 import { NavLink } from 'react-router-dom';
 
