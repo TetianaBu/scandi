@@ -13,7 +13,8 @@ export const ProductItemStyles = styled.article`
   &:hover button {
     visibility: visible;
   }
-  p {
+  .product-title,
+  .product-price {
     margin: 0;
     font-size: 18px;
   }
