@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { NavStyles, CartIMg } from './styles/NavStyles';
+import {
+  HeaderStyles,
+  NavMenuStyles,
+  CartCurrencyStyles,
+  CartIMg
+} from './styles/HeaderStyles';
 import logo from '../assets/icons/logo.svg';
 import emptyCart from '../assets/icons/emptyCart.svg';
 import CurrenciesList from './CurrencySwitcher';
@@ -9,7 +14,7 @@ import CATEGORIES from '../apollo/categoriesQuery';
 import { CartContext } from './CartContext';
 import MenuCart from './MenuCart';
 
-export class Nav extends Component {
+export class Header extends Component {
   static contextType = CartContext;
   state = { isCartOpen: false };
   toggleList = () => {
@@ -27,7 +32,7 @@ export class Nav extends Component {
       0
     );
     return (
-      <NavStyles>
+      <HeaderStyles>
         <Query query={CATEGORIES}>
           {({ loading, data, error }) => {
             if (loading) return 'loading...';
@@ -35,15 +40,17 @@ export class Nav extends Component {
             if (data) {
               const { categories } = data;
               return (
-                <ul>
-                  {categories.map((category, categoryIndex) => (
-                    <li key={categoryIndex} className="categories-nav">
-                      <NavLink to={category.name} activeClassName="nav-link">
-                        {category.name}
-                      </NavLink>
-                    </li>
-                  ))}
-                </ul>
+                <NavMenuStyles>
+                  <ul className="categories-nav-wrapper">
+                    {categories.map((category, categoryIndex) => (
+                      <li key={categoryIndex} className="categories-nav-item">
+                        <NavLink to={category.name} activeClassName="nav-link">
+                          {category.name}
+                        </NavLink>
+                      </li>
+                    ))}
+                  </ul>
+                </NavMenuStyles>
               );
             }
           }}
@@ -51,7 +58,7 @@ export class Nav extends Component {
         <NavLink to={`/`}>
           <img src={logo} alt="logo" />
         </NavLink>
-        <div className="cart-currency-wrapper">
+        <CartCurrencyStyles>
           <CurrenciesList />
           <button className="cart-wrapper" onClick={this.toggleList}>
             <CartIMg src={emptyCart} alt="cart" />
@@ -60,10 +67,10 @@ export class Nav extends Component {
             )}
           </button>
           {isCartOpen && <MenuCart onClose={this.closeCart} />}
-        </div>
-      </NavStyles>
+        </CartCurrencyStyles>
+      </HeaderStyles>
     );
   }
 }
 
-export default Nav;
+export default Header;

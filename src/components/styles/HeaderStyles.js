@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const NavStyles = styled.header`
+export const HeaderStyles = styled.header`
   margin: 0;
   height: 80px;
   padding: 0 3rem 0 3rem;
@@ -36,6 +36,7 @@ export const NavMenuStyles = styled.nav`
     padding-bottom: 2rem;
   }
 `;
+
 export const CartCurrencyStyles = styled.div`
   display: flex;
   justify-content: flex-end;
