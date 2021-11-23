@@ -2,28 +2,44 @@ import styled from 'styled-components';
 
 export const NavStyles = styled.header`
   margin: 0;
-  padding: 0 2rem 0 2rem;
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  align-content: center;
-  flex-direction: row;
   height: 80px;
-  ul {
+  padding: 0 3rem 0 3rem;
+  position: relative;
+  display: grid;
+  grid-template-columns: 114px 1fr 114px;
+  justify-items: center;
+  align-items: center;
+`;
+
+export const NavMenuStyles = styled.nav`
+  .categories-nav-wrapper {
     display: flex;
     flex-direction: row;
     list-style: none;
     margin: 0;
     padding: 0;
-    width: 134px;
+    max-width: 134px;
   }
-  .cart-currency-wrapper {
-    width: 114px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+  .categories-nav-item:not(:first-of-type) {
+    padding-left: 0.5rem;
   }
+  .categories-nav-item {
+    text-transform: uppercase;
+  }
+  .categories-nav-item a {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .nav-link {
+    color: var(--primary-light);
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 2rem;
+  }
+`;
+export const CartCurrencyStyles = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   .cart-wrapper {
     position: relative;
     padding-right: 1rem;
@@ -44,25 +60,6 @@ export const NavStyles = styled.header`
     align-items: center;
     top: -20%;
     left: 40%;
-  }
-  .categories-nav {
-    padding-left: 2rem;
-    padding-right: 1rem;
-    padding-bottom: 1rem;
-  }
-
-  a {
-    text-decoration: none;
-    color: var(--primary-dark);
-    padding-left: 1rem;
-    padding-right: 1rem;
-    text-transform: uppercase;
-
-  }
-  .nav-link {
-    color: var(--primary-light);
-    border-bottom: 2px solid var(--primary-light);
-    padding-bottom: 2rem;
   }
 `;
 
