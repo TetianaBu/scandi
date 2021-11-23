@@ -1,13 +1,13 @@
 import React from 'react';
-import ProductDescriptionPageStyles from './styles/ProductDescriptionPageStyles';
+import ProductDescriptionPageStyles from '../styles/ProductDescriptionPageStyles';
 import { Query } from '@apollo/client/react/components';
-import PRODUCT_DETAILED_DESCRIPTION from '../apollo/productDetailedDescriptionQuery';
-import { CurrencyContext } from './CurrencyContext';
+import PRODUCT_DETAILED_DESCRIPTION from '../../apollo/productDetailedDescriptionQuery';
+import { CurrencyContext } from '../CurrencyContext';
 import { CartContext } from './CartContext';
-import { getCurrencySymbol } from '../lib/currency';
+import { getCurrencySymbol } from '../../lib/currency';
 import Size from './Size';
 import ProductDescriptionCarousel from './ProductDescriptionCarouselStyles';
-import Description from './Description';
+import Description from '../Description';
 
 class ProductDescriptionPage extends React.Component {
   render() {

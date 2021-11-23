@@ -1,35 +1,34 @@
 import React from 'react';
-import { CurrencyContext } from './CurrencyContext';
+import { CurrencyContext } from '../CurrencyContext';
 import { CartContext } from './CartContext';
-import { getCurrencySymbol } from '../lib/currency';
+import { getCurrencySymbol } from '../../lib/currency';
 import { NavLink } from 'react-router-dom';
 import {
   MenuCartStyles,
   ItemInCartStyles,
   SizesButtonStyles,
   AmountWrapper
-} from './styles/MenuCartStyles';
+} from '../styles/MenuCartStyles';
 class MenuCart extends React.Component {
+
+  totalAmount = (itemsAddedToCart) =>
+    itemsAddedToCart.reduce(
+      (aggregator, current) => aggregator + current.amount,
+      0
+    );
   render() {
+    console.log(this.props);
     return (
       <MenuCartStyles>
         <CartContext.Consumer>
-          {({
-            itemsAddedToCart,
-            addItemToCart,
-            removeItemFromCart,
-            itemsAmountContext
-          }) => (
+          {({ itemsAddedToCart, addItemToCart, removeItemFromCart }) => (
             <>
-              <h4 className="bag-title">
-                My Bag
-                {itemsAddedToCart.reduce(
-                  (aggregator, current) => aggregator + current.amount,
-                  0
-                ) === 0
+              <p className="bag-title">
+                <b>My Bag</b>
+                {this.totalAmount(itemsAddedToCart) === 0
                   ? ` is empty`
-                  : ` items`}
-              </h4>
+                  : `,  ${this.totalAmount(itemsAddedToCart)} items`}
+              </p>
 
               {itemsAddedToCart.map((item, index) => (
                 <ItemInCartStyles key={index}>
@@ -74,7 +73,16 @@ class MenuCart extends React.Component {
                 </ItemInCartStyles>
               ))}
               <div className="total-amount-wrapper">
-                <p>total</p> <p>sum</p>
+                <p>
+                  <b>Total</b>
+                </p>{' '}
+                <CurrencyContext.Consumer>
+                  {({ currency }) => (
+                    <p>
+                      {getCurrencySymbol(currency)}
+                    </p>
+                  )}
+                </CurrencyContext.Consumer>
               </div>
               <div className="action-btn-wrapper">
                 <button className="btn-view-bag" onClick={this.props.onClose}>

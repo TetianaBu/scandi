@@ -49,13 +49,14 @@ export class CartContextProvider extends Component {
     });
   };
 
+
   render() {
     return (
       <CartContext.Provider
         value={{
           itemsAddedToCart: this.state.itemsAddedToCart,
           addItemToCart: this.addItemToCart,
-          removeItemFromCart: this.removeItemFromCart
+          removeItemFromCart: this.removeItemFromCart,
         }}
       >
         {this.props.children}

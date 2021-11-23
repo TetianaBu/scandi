@@ -2,7 +2,7 @@ import React from 'react';
 import {
   SinglePhotoStyles,
   ProductDescriptionCarouselStyles
-} from './styles/ProductDescriptionCarouselStyles';
+} from '../styles/ProductDescriptionCarouselStyles';
 
 class ProductDescriptionCarousel extends React.Component {
   render() {

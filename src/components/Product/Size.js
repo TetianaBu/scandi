@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {SizeStyles} from './styles/SizeStyles'
+import {SizeStyles} from '../styles/SizeStyles'
 
 export class Size extends Component {
   render() {
