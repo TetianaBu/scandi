@@ -3,11 +3,11 @@ import ProductDescriptionPageStyles from '../styles/ProductDescriptionPageStyles
 import { Query } from '@apollo/client/react/components';
 import PRODUCT_DETAILED_DESCRIPTION from '../../apollo/productDetailedDescriptionQuery';
 import { CurrencyContext } from '../CurrencyContext';
-import { CartContext } from './CartContext';
+import { CartContext } from '../Cart/CartContext';
 import { getCurrencySymbol } from '../../lib/currency';
 import Size from './Size';
-import ProductDescriptionCarousel from './ProductDescriptionCarouselStyles';
-import Description from '../Description';
+import ProductDescriptionCarousel from './ProductDescriptionCarousel';
+import Description from './Description';
 
 class ProductDescriptionPage extends React.Component {
   render() {
