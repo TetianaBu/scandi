@@ -4,7 +4,7 @@ import Header from './Header';
 import CategoryPage from './CategoryPage';
 import ProductDescriptionPage from './Product/ProductDescriptionPage';
 import Cart from './Cart/Cart';
-import Start from './Start';
+import Start from './StartPage';
 import NotFound from './NotFound';
 
 class Router extends Component {
