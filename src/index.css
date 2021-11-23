@@ -35,7 +35,8 @@
 body, button {
   font-family: 'Raleway', sans-serif;
 }
-body {
+
+body, a {
   color: var(--primary-dark);
 }
 
@@ -60,10 +61,15 @@ main {
   max-width: 1440px;
 }
 
-img { 
+img {
   max-width: 100%;
 }
 
 button, a {
   cursor: pointer;
 }
+
+a {
+  text-decoration: none;
+}
+
