@@ -6,7 +6,7 @@ export const CurrenctSwitcherStyles = styled.div`
   padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
-  z-index: 1;
+  z-index: 3;
   background-color: white;
   top: 10%;
   right: 2.5rem;

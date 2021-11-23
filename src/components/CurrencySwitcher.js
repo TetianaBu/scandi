@@ -36,18 +36,21 @@ class CurrenciesList extends Component {
           if (data) {
             const { currencies } = data;
             return (
-              <div
-                onMouseLeave={() => {
-                  document.addEventListener('click', onClickOutsideListener);
-                }}
-              >
+              <div>
                 <CurrenciesBtn onClick={this.toggleList}>
                   {' '}
                   {getCurrencySymbol(selectedCurrency)}{' '}
                   <img src={arrowDown} alt="arrow" />{' '}
                 </CurrenciesBtn>
                 {isOpen && (
-                  <CurrenctSwitcherStyles>
+                  <CurrenctSwitcherStyles
+                    onMouseLeave={() => {
+                      document.addEventListener(
+                        'click',
+                        onClickOutsideListener
+                      );
+                    }}
+                  >
                     {currencies.map((currency) => (
                       <span key={currency}>
                         <input
