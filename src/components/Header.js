@@ -12,7 +12,7 @@ import { NavLink } from 'react-router-dom';
 import { Query } from '@apollo/client/react/components';
 import CATEGORIES from '../apollo/categoriesQuery';
 import { CartContext } from './cart/CartContext';
-import MenuCart from './cart/MenuCart';
+import MenuCart from './minicart/MenuCart';
 
 export class Header extends Component {
   static contextType = CartContext;
