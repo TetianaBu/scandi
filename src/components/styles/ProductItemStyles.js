@@ -4,6 +4,7 @@ export const ProductItemStyles = styled.article`
   display: grid;
   max-height: 444px;
   padding: 2rem 1rem;
+  position: relative;
   &:hover,
   &:focus {
     -webkit-box-shadow: 2px 2px 41px -7px rgba(181, 181, 185, 1);

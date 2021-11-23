@@ -30,7 +30,6 @@ export class ProductItem extends Component {
           <ProductItemStyles>
             <ItemImageWrapper>
               <img src={firstImage} className="item-img" alt={name} />
-              {!inStock && <OutOfStockStyles>OUT OF STOCK</OutOfStockStyles>}
               {inStock && (
                 <ProductItemButton
                   onClick={() => addItemToCart(this.props.product)}
@@ -50,6 +49,7 @@ export class ProductItem extends Component {
                 </p>
               )}
             </CurrencyContext.Consumer>
+            {!inStock && <OutOfStockStyles>OUT OF STOCK</OutOfStockStyles>}
           </ProductItemStyles>
         )}
       </CartContext.Consumer>
