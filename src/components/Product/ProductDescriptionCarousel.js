@@ -1,32 +1,43 @@
 import React from 'react';
-import {
-  SinglePhotoStyles,
-  ProductDescriptionCarouselStyles
-} from '../styles/ProductDescriptionCarouselStyles';
-
+import { ProductDescriptionCarouselStyles } from '../styles/ProductDescriptionCarouselStyles';
+import { OutOfStockStyles } from '../styles/OutOfStockStyles';
 class ProductDescriptionCarousel extends React.Component {
+  state = {
+    image: true
+  };
+
+  initialImage = (image) => {
+    this.setState({
+      image: image
+    });
+  };
+
+  changeImage = (image, gallery) => {
+    return image === true ? gallery[0] : image;
+  };
+
   render() {
-    if (Object.keys(this.props.children).length === 0) {
-      return 'Photo are not available for this product';
-    }
-    if (Object.keys(this.props.children).length === 1) {
-      return (
-        <SinglePhotoStyles>
-          <img src={this.props.children} alt="item img" />
-        </SinglePhotoStyles>
-      );
-    } else {
-      return (
-        <ProductDescriptionCarouselStyles>
-          <div className="gallery">
-            {[...this.props.children].map((img, index) => (
-              <img src={img} key={index} alt="item img" />
-            ))}
-          </div>
-          <img src={this.props.children[0]} alt="item img" />
-        </ProductDescriptionCarouselStyles>
-      );
-    }
+    const { image } = this.state;
+    const { name, gallery, inStock } = this.props;
+    console.log(inStock);
+    return (
+      <ProductDescriptionCarouselStyles>
+        <div className="gallery">
+          {gallery.map((img, index) => (
+            <img
+              src={img}
+              onClick={() => {
+                this.initialImage(img);
+              }}
+              key={`${name}:${index}`}
+              alt={name}
+            />
+          ))}
+        </div>
+        <img src={this.changeImage(image, gallery)} alt={name} />
+        {!inStock && <OutOfStockStyles>OUT OF STOCK</OutOfStockStyles>}
+      </ProductDescriptionCarouselStyles>
+    );
   }
 }
 

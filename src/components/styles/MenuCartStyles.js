@@ -4,6 +4,7 @@ export const MenuCartStyles = styled.div`
   display: flex;
   flex-direction: column;
   width: 325px;
+  max-height: 700px;
   position: absolute;
   background-color: white;
   top: 100%;

@@ -22,13 +22,16 @@ class ProductDescriptionPage extends React.Component {
             if (!data.product) {
               return <Redirect to="/" />;
             }
-            const { name, brand, description, prices, gallery } = data.product;
-            console.log(description);
+            const { name, brand, description, prices, gallery, inStock } =
+              data.product;
+            console.log(data.product);
             return (
               <ProductDescriptionPageStyles>
-                <ProductDescriptionCarousel>
-                  {gallery}
-                </ProductDescriptionCarousel>
+                <ProductDescriptionCarousel
+                  gallery={gallery}
+                  name={name}
+                  inStock={inStock}
+                ></ProductDescriptionCarousel>
                 <div key={id}>
                   <div className="titles-wrapper">
                     <h1> {brand}</h1>

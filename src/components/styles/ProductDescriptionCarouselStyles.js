@@ -5,17 +5,14 @@ export const ProductDescriptionCarouselStyles = styled.div`
   grid-template-columns: 80px 75%;
   column-gap: 10%;
   height: 560px;
-  overflow: scroll;
+  position: relative;
   .gallery {
+    overflow: scroll;
     img {
       height: 80px;
       width: 80px;
-      padding-bottom: 2rem;
-      object-fit: contain;
+      margin-bottom: 2rem;
+      object-fit: cover;
     }
   }
-`;
-
-export const SinglePhotoStyles = styled.div`
-  display: block;
 `;

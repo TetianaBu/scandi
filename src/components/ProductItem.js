@@ -9,6 +9,7 @@ import { CurrencyContext } from './CurrencyContext';
 import { CartContext } from './cart/CartContext';
 import { getCurrencySymbol } from '../lib/currency';
 import { NavLink } from 'react-router-dom';
+import { OutOfStockStyles } from './styles/OutOfStockStyles';
 
 export class ProductItem extends Component {
   getPriceByCurrency = (currency) => {
@@ -20,6 +21,7 @@ export class ProductItem extends Component {
     const {
       id,
       name,
+      inStock,
       gallery: [firstImage]
     } = this.props.product;
     return (
@@ -28,11 +30,14 @@ export class ProductItem extends Component {
           <ProductItemStyles>
             <ItemImageWrapper>
               <img src={firstImage} className="item-img" alt={name} />
-              <ProductItemButton
-                onClick={() => addItemToCart(this.props.product)}
-              >
-                <img src={emptyCart} alt="cart" className="cart-svg" />
-              </ProductItemButton>
+              {!inStock && <OutOfStockStyles>OUT OF STOCK</OutOfStockStyles>}
+              {inStock && (
+                <ProductItemButton
+                  onClick={() => addItemToCart(this.props.product)}
+                >
+                  <img src={emptyCart} alt="cart" className="cart-svg" />
+                </ProductItemButton>
+              )}
             </ItemImageWrapper>
             <p className="product-title">
               <NavLink to={`/${category}/${id}`}>{name}</NavLink>
