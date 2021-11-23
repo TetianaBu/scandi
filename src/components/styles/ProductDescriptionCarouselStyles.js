@@ -12,6 +12,7 @@ export const ProductDescriptionCarouselStyles = styled.div`
       width: 80px;
       margin-bottom: 2rem;
       object-fit: cover;
+      cursor: pointer;
     }
   }
   .main-img-wrapper {
