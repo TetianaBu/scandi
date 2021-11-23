@@ -8,7 +8,7 @@ import emptyCart from '../assets/icons/emptyWhiteCart.svg';
 import { CurrencyContext } from './CurrencyContext';
 import { CartContext } from './Cart/CartContext';
 import { getCurrencySymbol } from '../lib/currency';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export class ProductItem extends Component {
   getPriceByCurrency = (currency) => {
@@ -16,7 +16,9 @@ export class ProductItem extends Component {
     return prices.find((price) => price.currency === currency)?.amount;
   };
   render() {
+    const { category } = this.props;
     const {
+      id,
       name,
       gallery: [firstImage]
     } = this.props.product;
@@ -32,7 +34,9 @@ export class ProductItem extends Component {
                 <img src={emptyCart} alt="cart" className="cart-svg" />
               </ProductItemButton>
             </ItemImageWrapper>
-            <p className="product-title">{name}</p>
+            <p className="product-title">
+              <NavLink to={`/${category}/${id}`}>{name}</NavLink>
+            </p>
             <CurrencyContext.Consumer>
               {({ currency }) => (
                 <p className="product-price">
