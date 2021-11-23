@@ -55,9 +55,9 @@ export default class InnerMenuCart extends React.Component {
                   </div>
                   <p className="price">
                     {getCurrencySymbol(currency)}
-                    {item.product.prices.find(
+                    {(item.product.prices.find(
                       (price) => price.currency === currency
-                    )?.amount * item.amount}
+                    )?.amount * item.amount).toFixed(2)}
                   </p>
                   <SizesButtonStyles>
                     <button>S</button>
@@ -88,7 +88,7 @@ export default class InnerMenuCart extends React.Component {
               </p>{' '}
               <p>
                 {getCurrencySymbol(currency)}
-                {this.totalPrice(itemsAddedToCart, currency)}
+                {(this.totalPrice(itemsAddedToCart, currency)).toFixed(2)}
               </p>
             </div>
             <ActionBtnStyles>
