@@ -10,7 +10,7 @@ export const MenuCartStyles = styled.div`
   top: 100%;
   right: 5%;
   padding: 0 16px;
-  z-index: 2;
+  z-index: 3;
   h4,
   h5,
   p {
