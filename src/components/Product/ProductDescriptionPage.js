@@ -8,6 +8,7 @@ import { getCurrencySymbol } from '../../lib/currency';
 import Size from './Size';
 import ProductDescriptionCarousel from './ProductDescriptionCarousel';
 import Description from './Description';
+import { Redirect } from 'react-router-dom';
 
 class ProductDescriptionPage extends React.Component {
   render() {
@@ -19,7 +20,7 @@ class ProductDescriptionPage extends React.Component {
           if (error) return 'error';
           if (data) {
             if (!data.product) {
-              return 'Redirect';
+              return <Redirect to="/" />;
             }
             const { name, brand, description, prices, gallery } = data.product;
             console.log(description);
