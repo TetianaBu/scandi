@@ -22,30 +22,33 @@ export const MenuCartStyles = styled.div`
     justify-content: space-between;
     padding: 20px 0;
   }
-  .action-btn-wrapper {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 20px;
-    button {
-      height: 43px;
-      width: 140px;
-      text-transform: uppercase;
-    }
-    .btn-view-bag {
-      background-color: white;
-      border: 1px solid var(--primary-dark);
-    }
-    .btn-check-out {
-      background-color: var(--primary-light);
-      border: none;
-      color: white;
-    }
-  }
   .bag-title {
     padding: 20px 0;
     text-align: start;
   }
 `;
+
+export const ActionBtnStyles = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  .btn-view-bag,
+  .btn-check-out {
+    height: 43px;
+    width: 140px;
+    text-transform: uppercase;
+  }
+  .btn-view-bag {
+    background-color: white;
+    border: 1px solid var(--primary-dark);
+  }
+  .btn-check-out {
+    background-color: var(--primary-light);
+    border: none;
+    color: white;
+  }
+`;
+
 export const ItemInCartStyles = styled.div`
   display: grid;
   grid-template-columns: 146px 140px;

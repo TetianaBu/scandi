@@ -47,6 +47,7 @@ export const ItemInCartStyles = styled.div`
 export const SizesButtonStyles = styled.div`
   display: flex;
   flex-direction: row;
+
   button {
     background-color: white;
     height: 45px;

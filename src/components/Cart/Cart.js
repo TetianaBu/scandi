@@ -27,11 +27,9 @@ class Cart extends React.Component {
                     {({ currency }) => (
                       <p className="price">
                         {getCurrencySymbol(currency)}
-                        {
-                          item.product.prices.find(
-                            (price) => price.currency === currency
-                          )?.amount
-                        }
+                        {item.product.prices.find(
+                          (price) => price.currency === currency
+                        )?.amount * item.amount}
                       </p>
                     )}
                   </CurrencyContext.Consumer>
