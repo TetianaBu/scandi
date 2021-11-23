@@ -51,7 +51,7 @@ class Cart extends React.Component {
                     </button>
                   </AmountWrapper>
 
-                  <CartCarousel>{item.product.gallery}</CartCarousel>
+                  <CartCarousel gallery={item.product.gallery}></CartCarousel>
                 </div>
               </ItemInCartStyles>
             ))}
