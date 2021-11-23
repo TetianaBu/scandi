@@ -27,7 +27,7 @@ class CategoryPage extends Component {
               return (
                 <div className="category-page-inner-grid">
                   {products.map((product) => (
-                    <ProductItem product={product} key={product.id} />
+                    <ProductItem product={product} key={product.id} category={category} />
                   ))}
                 </div>
               );
