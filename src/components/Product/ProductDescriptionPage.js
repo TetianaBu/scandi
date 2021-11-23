@@ -57,6 +57,7 @@ class ProductDescriptionPage extends React.Component {
                       <button
                         className="add-btn"
                         onClick={() => addItemToCart(data.product)}
+                        disabled={!inStock}
                       >
                         Add to cart
                       </button>

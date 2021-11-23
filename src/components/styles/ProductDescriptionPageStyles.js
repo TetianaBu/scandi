@@ -15,9 +15,16 @@ const ProductDescriptionPageStyles = styled.article`
     width: 292px;
     height: 52px;
     margin-bottom: 2rem;
-  }
-  .add-btn:hover {
-    background-color: var(--primary-light-btn);
+    &:hover {
+      background-color: var(--primary-light-btn);
+    }
+    &:disabled {
+      opacity: 0.8;
+      cursor: auto;
+      &:hover {
+        background-color: var(--primary-light);
+      }
+    }
   }
   .price-title {
     text-transform: uppercase;
