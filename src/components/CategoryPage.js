@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { Query } from '@apollo/client/react/components';
-import { CartContext} from './CartContext';
+import { CartContext} from './Cart/CartContext';
 import ProductItem from './ProductItem';
 import CategoryPageStyles from './styles/CategoryPageStyles';
 import ALL_PRODUCTS_BY_CATEGORY from '../apollo/allProductsByCategoryQuery';

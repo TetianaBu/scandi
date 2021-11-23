@@ -1,5 +1,5 @@
 import React from 'react';
-import CartCarouselStyles from './styles/CartCarouselStyles'
+import CartCarouselStyles from '../styles/CartCarouselStyles'
 class CartCarousel extends React.Component {
   render() {
     return (

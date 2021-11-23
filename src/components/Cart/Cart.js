@@ -3,13 +3,12 @@ import {
   CartStyles,
   ItemInCartStyles,
   AmountWrapper,
-  ItemDescriptionStyles,
   SizesButtonStyles
 } from '../styles/CartStyles';
 import { CurrencyContext } from '../CurrencyContext';
 import { CartContext } from './CartContext';
 import { getCurrencySymbol } from '../../lib/currency';
-import CartCarousel from '../CartCarousel';
+import CartCarousel from './CartCarousel';
 
 class Cart extends React.Component {
   render() {

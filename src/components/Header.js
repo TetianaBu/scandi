@@ -11,8 +11,8 @@ import CurrenciesList from './CurrencySwitcher';
 import { NavLink } from 'react-router-dom';
 import { Query } from '@apollo/client/react/components';
 import CATEGORIES from '../apollo/categoriesQuery';
-import { CartContext } from './CartContext';
-import MenuCart from './MenuCart';
+import { CartContext } from './Cart/CartContext';
+import MenuCart from './Cart/MenuCart';
 
 export class Header extends Component {
   static contextType = CartContext;
