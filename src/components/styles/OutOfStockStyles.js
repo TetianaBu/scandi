@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const OutOfStockStyles = styled.div`
-  display: block;
   position: absolute;
   background-color: lightgray;
   width: 100%;
@@ -11,6 +10,6 @@ export const OutOfStockStyles = styled.div`
   font-size: 24px;
   display: grid;
   place-items: center;
-  top: 1%;
+  top: 0%;
   z-index: 2;
 `;
