@@ -17,7 +17,7 @@ export const ItemInCartStyles = styled.div`
   align-items: baseline;
   padding: 20px 0;
   margin-bottom: 20px;
-  border-top: 1px solid var(--primary-dark);
+  border-top: 1px solid #E5E5E5;
   .row-with-gallery {
     display: flex;
     flex-direction: row;
