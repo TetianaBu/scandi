@@ -7,7 +7,7 @@ import {
 } from './styles/HeaderStyles';
 import logo from '../assets/icons/logo.svg';
 import emptyCart from '../assets/icons/emptyCart.svg';
-import CurrenciesList from './CurrencySwitcher';
+import CurrenciesList from './currencies/CurrencySwitcher';
 import { NavLink } from 'react-router-dom';
 import { Query } from '@apollo/client/react/components';
 import CATEGORIES from '../apollo/categoriesQuery';

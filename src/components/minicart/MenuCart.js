@@ -1,5 +1,5 @@
 import React from 'react';
-import { CurrencyContext } from '../CurrencyContext';
+import { CurrencyContext } from '../currencies/CurrencyContext';
 import { CartContext } from '../cart/CartContext';
 import InnerMenuCart from './InnerMenuCart';
 import { MenuCartStyles, OuterWrapper } from '../styles/MenuCartStyles';

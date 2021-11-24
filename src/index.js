@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import './index.css';
 import { CartContextProvider } from './components/cart/CartContext';
-import { CurrencyContextProvider } from './components/CurrencyContext';
+import { CurrencyContextProvider } from './components/currencies/CurrencyContext';
 
 import Router from './components/Router';
 

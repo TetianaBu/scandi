@@ -45,7 +45,6 @@ export default class InnerMenuCart extends React.Component {
   render() {
     const { itemsAddedToCart, currency, addItemToCart, removeItemFromCart } =
       this.props;
-    console.log(itemsAddedToCart);
     const amount = this.totalAmount(itemsAddedToCart);
     let amountLabel = '';
     switch (amount) {

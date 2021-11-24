@@ -5,7 +5,7 @@ import {
   AmountWrapper,
   SizesButtonStyles
 } from '../styles/CartStyles';
-import { CurrencyContext } from '../CurrencyContext';
+import { CurrencyContext } from '../currencies/CurrencyContext';
 import { CartContext } from './CartContext';
 import { getCurrencySymbol } from '../../lib/currency';
 import CartCarousel from './CartCarousel';

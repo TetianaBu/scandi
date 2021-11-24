@@ -5,7 +5,7 @@ import {
   ProductItemButton
 } from './styles/ProductItemStyles';
 import emptyCart from '../assets/icons/emptyWhiteCart.svg';
-import { CurrencyContext } from './CurrencyContext';
+import { CurrencyContext } from './currencies/CurrencyContext';
 import { CartContext } from './cart/CartContext';
 import { getCurrencySymbol } from '../lib/currency';
 import { NavLink } from 'react-router-dom';
@@ -39,7 +39,7 @@ export class ProductItem extends Component {
               )}
             </ItemImageWrapper>
             <p className="product-title">
-              <NavLink to={`/${category}/${id}`}>{name}</NavLink>
+              <NavLink to={`/${category}/${id}`} >{name}</NavLink>
             </p>
             <CurrencyContext.Consumer>
               {({ currency }) => (

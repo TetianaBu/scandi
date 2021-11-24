@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Query } from '@apollo/client/react/components';
-import { CurrenciesBtn } from './styles/CurrencySwitcherStyles';
-import CURRENCIES from '../apollo/currenciesQuery';
+import { CurrenciesBtn } from '../styles/CurrencySwitcherStyles';
+import CURRENCIES from '../../apollo/currenciesQuery';
 import { CurrencyContext } from './CurrencyContext';
-import { getCurrencySymbol } from '../lib/currency';
-import arrowDown from '../assets/icons/arrowDown.svg';
+import { getCurrencySymbol } from '../../lib/currency';
+import arrowDown from '../../assets/icons/arrowDown.svg';
 import CurrenciesCart from './CurrencyCart';
 
 class CurrenciesList extends Component {

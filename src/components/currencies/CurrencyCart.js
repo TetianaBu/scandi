@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { CurrenctSwitcherStyles } from './styles/CurrencySwitcherStyles';
-import { getCurrencyName } from '../lib/currency';
+import { CurrenctSwitcherStyles } from '../styles/CurrencySwitcherStyles';
+import { getCurrencyName } from '../../lib/currency';
 
 class CurrenciesCart extends Component {
   wrapperRef = React.createRef();

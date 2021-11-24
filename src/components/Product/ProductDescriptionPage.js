@@ -2,7 +2,7 @@ import React from 'react';
 import ProductDescriptionPageStyles from '../styles/ProductDescriptionPageStyles';
 import { Query } from '@apollo/client/react/components';
 import PRODUCT_DETAILED_DESCRIPTION from '../../apollo/productDetailedDescriptionQuery';
-import { CurrencyContext } from '../CurrencyContext';
+import { CurrencyContext } from '../currencies/CurrencyContext';
 import { CartContext } from '../cart/CartContext';
 import { getCurrencySymbol } from '../../lib/currency';
 import Size from './Size';
