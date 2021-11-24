@@ -1,5 +1,14 @@
 import styled from 'styled-components';
 
+export const OuterWrapper = styled.div`
+  position: absolute;
+  top: 80px;
+  background: rgba(57, 55, 72, 0.22);
+  width: 100%;
+  right: 0;
+  height: 100vh;
+  z-index: 3;
+`;
 export const MenuCartStyles = styled.div`
   display: flex;
   flex-direction: column;
@@ -7,10 +16,10 @@ export const MenuCartStyles = styled.div`
   max-height: 700px;
   position: absolute;
   background-color: white;
-  top: 100%;
-  right: 5%;
+  top: 0;
+  right: 3rem;
   padding: 0 16px;
-  z-index: 3;
+  z-index: 4;
   h4,
   h5,
   p {

@@ -2,12 +2,13 @@ import React from 'react';
 import { CurrencyContext } from '../CurrencyContext';
 import { CartContext } from '../cart/CartContext';
 import InnerMenuCart from './InnerMenuCart';
-import { MenuCartStyles } from '../styles/MenuCartStyles';
+import { MenuCartStyles, OuterWrapper } from '../styles/MenuCartStyles';
 
 class MenuCart extends React.Component {
   render() {
     const { onClose } = this.props;
     return (
+      <OuterWrapper>
       <MenuCartStyles>
         <CurrencyContext.Consumer>
           {({ currency }) => (
@@ -25,6 +26,7 @@ class MenuCart extends React.Component {
           )}
         </CurrencyContext.Consumer>
       </MenuCartStyles>
+      </OuterWrapper>
     );
   }
 }
