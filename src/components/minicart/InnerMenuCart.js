@@ -1,12 +1,7 @@
 import React from 'react';
 import { getCurrencySymbol } from '../../lib/currency';
-import { NavLink } from 'react-router-dom';
-import {
-  ItemInCartStyles,
-  SizesButtonStyles,
-  AmountWrapper,
-  ActionBtnStyles
-} from '../styles/MenuCartStyles';
+import ActionBtns from './ActionBtns';
+import ItemInCart from './ItemInCart';
 
 export default class InnerMenuCart extends React.Component {
   onClick = (event) => {
@@ -34,6 +29,7 @@ export default class InnerMenuCart extends React.Component {
       (aggregator, current) => aggregator + current.amount,
       0
     );
+
   totalPrice = (itemsAddedToCart, currency) =>
     itemsAddedToCart.reduce((aggregator, current) => {
       let currentPrice = current.product.prices.find(
@@ -47,6 +43,7 @@ export default class InnerMenuCart extends React.Component {
       this.props;
     const amount = this.totalAmount(itemsAddedToCart);
     let amountLabel = '';
+
     switch (amount) {
       case 0:
         amountLabel = ` is empty`;
@@ -57,6 +54,7 @@ export default class InnerMenuCart extends React.Component {
       default:
         amountLabel = `, ${amount} items`;
     }
+
     return (
       <div ref={this.wrapperRef}>
         <p className="bag-title">
@@ -66,42 +64,13 @@ export default class InnerMenuCart extends React.Component {
         {amount > 0 && (
           <div>
             {itemsAddedToCart.map((item, index) => (
-              <ItemInCartStyles key={index}>
-                <div className="item-description">
-                  <div className="titles-wrapper">
-                    <h4>{item.product.brand}</h4>
-                    <h5>{item.product.name}</h5>
-                  </div>
-                  <p className="price">
-                    {getCurrencySymbol(currency)}
-                    {(
-                      item.product.prices.find(
-                        (price) => price.currency === currency
-                      )?.amount * item.amount
-                    ).toFixed(2)}
-                  </p>
-                  <SizesButtonStyles>
-                    <button>S</button>
-                    <button>M</button>{' '}
-                  </SizesButtonStyles>
-                </div>
-                <div className="row-with-gallery">
-                  <AmountWrapper>
-                    <button onClick={() => addItemToCart(item.product)}>
-                      &#43;{' '}
-                    </button>
-                    <p>{item.amount}</p>
-                    <button onClick={() => removeItemFromCart(item.product)}>
-                      &#8211;{' '}
-                    </button>
-                  </AmountWrapper>
-                  <img
-                    src={item.product.gallery[0]}
-                    alt={item.name}
-                    className="img-cart"
-                  />
-                </div>
-              </ItemInCartStyles>
+              <ItemInCart
+                item={item}
+                key={index}
+                addItemToCart={addItemToCart}
+                removeItemFromCart={removeItemFromCart}
+                currency={currency}
+              />
             ))}
             <div className="total-amount-wrapper">
               <p>
@@ -112,12 +81,7 @@ export default class InnerMenuCart extends React.Component {
                 {this.totalPrice(itemsAddedToCart, currency).toFixed(2)}
               </p>
             </div>
-            <ActionBtnStyles>
-              <button className="btn-view-bag" onClick={this.props.onClose}>
-                <NavLink to={`/cart`}>View bag</NavLink>
-              </button>
-              <button className="btn-check-out">Check Out</button>
-            </ActionBtnStyles>
+            <ActionBtns onClose={this.props.onClose} />
           </div>
         )}
       </div>
