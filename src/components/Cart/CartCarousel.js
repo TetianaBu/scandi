@@ -33,17 +33,21 @@ class CartCarousel extends React.Component {
     const displayedImage = gallery[this.state.imageIndex];
     return (
       <CartCarouselStyles>
-        <ArrowBtn onClick={this.previousImage}>
-          {' '}
-          <img src={arrowRight} alt="arrow right" />
-        </ArrowBtn>
+        {gallery.length > 1 && (
+          <ArrowBtn onClick={this.previousImage}>
+            {' '}
+            <img src={arrowRight} alt="arrow right" />
+          </ArrowBtn>
+        )}
         <div className="img-gallery">
           <img src={displayedImage} alt="item img" />
         </div>
-        <ArrowBtn onClick={() => this.nextImage(gallery)}>
-          {' '}
-          <img src={arrowLeft} alt="arrow left" />
-        </ArrowBtn>
+        {gallery.length > 1 && (
+          <ArrowBtn onClick={() => this.nextImage(gallery)}>
+            {' '}
+            <img src={arrowLeft} alt="arrow left" />
+          </ArrowBtn>
+        )}
       </CartCarouselStyles>
     );
   }
