@@ -16,6 +16,7 @@ import MenuCart from './minicart/MenuCart';
 
 export class Header extends Component {
   static contextType = CartContext;
+  cartToggleButtonRef = React.createRef();
   state = { isCartOpen: false };
   toggleList = () => {
     this.setState((prevState) => ({ isCartOpen: !prevState.isCartOpen }));
@@ -60,13 +61,22 @@ export class Header extends Component {
         </NavLink>
         <CartCurrencyStyles>
           <CurrenciesList />
-          <button className="cart-wrapper" onClick={this.toggleList}>
+          <button
+            ref={this.cartToggleButtonRef}
+            className="cart-wrapper"
+            onClick={this.toggleList}
+          >
             <CartIMg src={emptyCart} alt="cart" />
             {itemsAmount > 0 && (
               <span className="items-amount">{itemsAmount}</span>
             )}
           </button>
-          {isCartOpen && <MenuCart onClose={this.closeCart} />}
+          {isCartOpen && (
+            <MenuCart
+              onClose={this.closeCart}
+              cartToggleButtonRef={this.cartToggleButtonRef}
+            />
+          )}
         </CartCurrencyStyles>
       </HeaderStyles>
     );

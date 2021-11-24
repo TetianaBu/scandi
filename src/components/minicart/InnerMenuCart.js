@@ -9,6 +9,26 @@ import {
 } from '../styles/MenuCartStyles';
 
 export default class InnerMenuCart extends React.Component {
+  onClick = (event) => {
+    if (
+      this.wrapperRef &&
+      this.props.cartToggleButtonRef &&
+      !this.wrapperRef.current.contains(event.target) &&
+      !this.props.cartToggleButtonRef.current.contains(event.target)
+    ) {
+      this.props.onClose();
+    }
+  };
+
+  wrapperRef = React.createRef();
+
+  componentDidMount() {
+    document.addEventListener('click', this.onClick);
+  }
+  componentWillUnmount() {
+    document.removeEventListener('click', this.onClick);
+  }
+
   totalAmount = (itemsAddedToCart) =>
     itemsAddedToCart.reduce(
       (aggregator, current) => aggregator + current.amount,
@@ -39,7 +59,7 @@ export default class InnerMenuCart extends React.Component {
         amountLabel = `, ${amount} items`;
     }
     return (
-      <div>
+      <div ref={this.wrapperRef}>
         <p className="bag-title">
           <b>My Bag</b>
           {amountLabel}
@@ -55,9 +75,11 @@ export default class InnerMenuCart extends React.Component {
                   </div>
                   <p className="price">
                     {getCurrencySymbol(currency)}
-                    {(item.product.prices.find(
-                      (price) => price.currency === currency
-                    )?.amount * item.amount).toFixed(2)}
+                    {(
+                      item.product.prices.find(
+                        (price) => price.currency === currency
+                      )?.amount * item.amount
+                    ).toFixed(2)}
                   </p>
                   <SizesButtonStyles>
                     <button>S</button>
@@ -88,7 +110,7 @@ export default class InnerMenuCart extends React.Component {
               </p>{' '}
               <p>
                 {getCurrencySymbol(currency)}
-                {(this.totalPrice(itemsAddedToCart, currency)).toFixed(2)}
+                {this.totalPrice(itemsAddedToCart, currency).toFixed(2)}
               </p>
             </div>
             <ActionBtnStyles>
