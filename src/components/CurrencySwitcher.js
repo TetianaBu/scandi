@@ -1,33 +1,34 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { Query } from '@apollo/client/react/components';
-import {
-  CurrenciesBtn,
-  CurrenctSwitcherStyles
-} from './styles/CurrencySwitcherStyles';
+import { CurrenciesBtn } from './styles/CurrencySwitcherStyles';
 import CURRENCIES from '../apollo/currenciesQuery';
 import { CurrencyContext } from './CurrencyContext';
-import { getCurrencyName, getCurrencySymbol } from '../lib/currency';
+import { getCurrencySymbol } from '../lib/currency';
 import arrowDown from '../assets/icons/arrowDown.svg';
+import CurrenciesCart from './CurrencyCart';
 
 class CurrenciesList extends Component {
   static contextType = CurrencyContext;
+  currenciesToggleBtnRef = React.createRef();
 
   state = { isOpen: false };
+
   toggleList = () => {
     this.setState((prevState) => ({ isOpen: !prevState.isOpen }));
   };
+
   onSelect = (currency) => {
     const { setCurrency } = this.context;
     setCurrency(currency);
     this.setState({ isOpen: false });
   };
+  onClickOutside = (currency) => {
+    this.setState({ isOpen: false });
+  };
+
   render() {
     const { currency: selectedCurrency } = this.context;
     const { isOpen } = this.state;
-    const onClickOutsideListener = () => {
-      this.setState({ isOpen: false });
-      document.removeEventListener('click', onClickOutsideListener);
-    };
     return (
       <Query query={CURRENCIES}>
         {({ loading, data, error }) => {
@@ -37,37 +38,23 @@ class CurrenciesList extends Component {
             const { currencies } = data;
             return (
               <div>
-                <CurrenciesBtn onClick={this.toggleList}>
+                <CurrenciesBtn
+                  onClick={this.toggleList}
+                  ref={this.currenciesToggleBtnRef}
+                >
                   {' '}
                   {getCurrencySymbol(selectedCurrency)}{' '}
                   <img src={arrowDown} alt="arrow" />{' '}
                 </CurrenciesBtn>
                 {isOpen && (
-                  <CurrenctSwitcherStyles
-                    onMouseLeave={() => {
-                      document.addEventListener(
-                        'click',
-                        onClickOutsideListener
-                      );
-                    }}
-                  >
-                    {currencies.map((currency) => (
-                      <span key={currency}>
-                        <input
-                          checked={currency === selectedCurrency}
-                          type="radio"
-                          name="currency"
-                          id={currency}
-                          value={currency}
-                          onChange={() => this.onSelect(currency)}
-                        />
-                        <label htmlFor={currency}>
-                          {' '}
-                          {getCurrencyName(currency)}
-                        </label>
-                      </span>
-                    ))}
-                  </CurrenctSwitcherStyles>
+                  <CurrenciesCart
+                    isOpen={this.state}
+                    currencies={currencies}
+                    selectedCurrency={selectedCurrency}
+                    onSelect={this.onSelect}
+                    onClickOutside={this.onClickOutside}
+                    currenciesToggleBtnRef={this.currenciesToggleBtnRef}
+                  />
                 )}
               </div>
             );
