@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const ProductDescriptionPageStyles = styled.article`
   display: grid;
   grid-template-columns: 55% 292px;
+  max-height: 560px;
   column-gap: 5%;
   padding: 3rem;
   .add-btn {

@@ -6,7 +6,7 @@ import { CurrencyContext } from '../CurrencyContext';
 import { CartContext } from '../cart/CartContext';
 import { getCurrencySymbol } from '../../lib/currency';
 import Size from './Size';
-import ProductDescriptionCarousel from './ProductDescriptionCarousel';
+import ProductDescriptionImg from './ProductDescriptionImg';
 import Description from './Description';
 import { Redirect } from 'react-router-dom';
 
@@ -27,11 +27,11 @@ class ProductDescriptionPage extends React.Component {
             console.log(data.product);
             return (
               <ProductDescriptionPageStyles>
-                <ProductDescriptionCarousel
+                <ProductDescriptionImg
                   gallery={gallery}
                   name={name}
                   inStock={inStock}
-                ></ProductDescriptionCarousel>
+                ></ProductDescriptionImg>
                 <div key={id}>
                   <div className="titles-wrapper">
                     <h1> {brand}</h1>

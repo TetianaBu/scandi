@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-export const ProductDescriptionCarouselStyles = styled.div`
+export const ProductDescriptionImgStyles = styled.div`
   display: grid;
   grid-template-columns: 80px 75%;
   column-gap: 10%;
-  height: 560px;
+  max-height: 510px;
   .gallery {
     overflow: scroll;
     img {
@@ -17,5 +17,11 @@ export const ProductDescriptionCarouselStyles = styled.div`
   }
   .main-img-wrapper {
     position: relative;
+    display: grid;
+    place-items: center;
+    img {
+      max-height: 500px;
+      object-fit: contain;
+    }
   }
 `;

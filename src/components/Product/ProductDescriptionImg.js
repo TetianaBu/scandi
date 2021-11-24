@@ -1,7 +1,7 @@
 import React from 'react';
-import { ProductDescriptionCarouselStyles } from '../styles/ProductDescriptionCarouselStyles';
+import { ProductDescriptionImgStyles } from '../styles/ProductDescriptionImgStyles';
 import { OutOfStockStyles } from '../styles/OutOfStockStyles';
-class ProductDescriptionCarousel extends React.Component {
+class ProductDescriptionImg extends React.Component {
   state = {
     image: true
   };
@@ -21,7 +21,7 @@ class ProductDescriptionCarousel extends React.Component {
     const { name, gallery, inStock } = this.props;
     console.log(inStock);
     return (
-      <ProductDescriptionCarouselStyles>
+      <ProductDescriptionImgStyles>
         <div className="gallery">
           {gallery.map((img, index) => (
             <img
@@ -38,9 +38,9 @@ class ProductDescriptionCarousel extends React.Component {
         <img src={this.changeImage(image, gallery)} alt={name} />
         {!inStock && <OutOfStockStyles>OUT OF STOCK</OutOfStockStyles>}
         </div>
-      </ProductDescriptionCarouselStyles>
+      </ProductDescriptionImgStyles>
     );
   }
 }
 
-export default ProductDescriptionCarousel;
+export default ProductDescriptionImg;
