@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { NavMenuStyles } from './styles/NavStyles';
+import { NavMenuStyles } from '../styles/NavStyles';
 import { NavLink, Redirect } from 'react-router-dom';
 import { Query } from '@apollo/client/react/components';
-import CATEGORIES from '../apollo/categoriesQuery';
+import CATEGORIES from '../../apollo/categoriesQuery';
 
 export class Nav extends Component {
   render() {

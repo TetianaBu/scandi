@@ -3,13 +3,13 @@ import {
   HeaderStyles,
   CartCurrencyStyles,
   CartIMg
-} from './styles/HeaderStyles';
-import logo from '../assets/icons/logo.svg';
-import emptyCart from '../assets/icons/emptyCart.svg';
-import CurrenciesList from './currencies/CurrencySwitcher';
+} from '../styles/HeaderStyles';
+import logo from '../../assets/icons/logo.svg';
+import emptyCart from '../../assets/icons/emptyCart.svg';
+import CurrenciesList from '../currencies/CurrencySwitcher';
 import { NavLink } from 'react-router-dom';
-import { CartContext } from './cart/CartContext';
-import MenuCart from './minicart/MenuCart';
+import { CartContext } from '../cart/CartContext';
+import MenuCart from '../minicart/MenuCart';
 import Nav from './Nav';
 
 export class Header extends Component {
