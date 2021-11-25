@@ -6,6 +6,7 @@ import CURRENCIES from '../../apollo/currenciesQuery';
 import { CurrencyContext } from './CurrencyContext';
 import { getCurrencySymbol } from '../../lib/currency';
 import arrowDown from '../../assets/icons/arrowDown.svg';
+import arrowUp from '../../assets/icons/arrowUp.svg';
 import CurrenciesCart from './CurrencyCart';
 
 class CurrenciesList extends Component {
@@ -34,7 +35,7 @@ class CurrenciesList extends Component {
       <Query query={CURRENCIES}>
         {({ loading, data, error }) => {
           if (loading) return 'loading...';
-          if (error) return <Redirect to="/404"/>;
+          if (error) return <Redirect to="/404" />;
           if (data) {
             const { currencies } = data;
             return (
@@ -45,7 +46,8 @@ class CurrenciesList extends Component {
                 >
                   {' '}
                   {getCurrencySymbol(selectedCurrency)}{' '}
-                  <img src={arrowDown} alt="arrow" />{' '}
+                  {!isOpen && <img src={arrowDown} alt="arrow" />}
+                  {isOpen && <img src={arrowUp} alt="arrow" />}
                 </CurrenciesBtn>
                 {isOpen && (
                   <CurrenciesCart
