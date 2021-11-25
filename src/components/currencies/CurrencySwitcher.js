@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Query } from '@apollo/client/react/components';
 import { CurrenciesBtn } from '../styles/CurrencySwitcherStyles';
+import { Redirect } from 'react-router-dom';
 import CURRENCIES from '../../apollo/currenciesQuery';
 import { CurrencyContext } from './CurrencyContext';
 import { getCurrencySymbol } from '../../lib/currency';
@@ -33,7 +34,7 @@ class CurrenciesList extends Component {
       <Query query={CURRENCIES}>
         {({ loading, data, error }) => {
           if (loading) return 'loading...';
-          if (error) return 'error';
+          if (error) return <Redirect to="/404"/>;
           if (data) {
             const { currencies } = data;
             return (

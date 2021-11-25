@@ -18,6 +18,7 @@ export class ProductItem extends Component {
   };
   render() {
     const { category } = this.props;
+    console.log(category, 'here');
     const {
       id,
       name,
@@ -39,7 +40,7 @@ export class ProductItem extends Component {
               )}
             </ItemImageWrapper>
             <p className="product-title">
-              <NavLink to={`/${category}/${id}`} >{name}</NavLink>
+              <NavLink to={`/${category}/${id}`}>{name}</NavLink>
             </p>
             <CurrencyContext.Consumer>
               {({ currency }) => (

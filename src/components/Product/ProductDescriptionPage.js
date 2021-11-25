@@ -17,7 +17,7 @@ class ProductDescriptionPage extends React.Component {
       <Query query={PRODUCT_DETAILED_DESCRIPTION} variables={{ productID: id }}>
         {({ loading, data, error }) => {
           if (loading) return 'loading...';
-          if (error) return 'error';
+          if (error) return <Redirect to="/404" />;
           if (data) {
             if (!data.product) {
               return <Redirect to="/" />;

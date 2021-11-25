@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { Query } from '@apollo/client/react/components';
 import { CartContext} from './cart/CartContext';
+import { Redirect } from 'react-router-dom';
 import ProductItem from './ProductItem';
 import CategoryPageStyles from './styles/CategoryPageStyles';
 import ALL_PRODUCTS_BY_CATEGORY from '../apollo/allProductsByCategoryQuery';
@@ -18,7 +19,7 @@ class CategoryPage extends Component {
         >
           {({ loading, data, error }) => {
             if (loading) return 'loading...';
-            if (error) return 'error...';
+            if (error) return <Redirect to="/404"/>;
             if (data) {
               if (!data.category) {
                 return '/404';
