@@ -24,7 +24,6 @@ class ProductDescriptionPage extends React.Component {
             }
             const { name, brand, description, prices, gallery, inStock } =
               data.product;
-            console.log(data.product);
             return (
               <ProductDescriptionPageStyles>
                 <ProductDescriptionImg

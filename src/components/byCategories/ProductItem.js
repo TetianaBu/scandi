@@ -18,7 +18,6 @@ export class ProductItem extends Component {
   };
   render() {
     const { category } = this.props;
-    console.log(category, 'here');
     const {
       id,
       name,

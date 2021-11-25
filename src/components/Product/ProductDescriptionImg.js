@@ -19,7 +19,6 @@ class ProductDescriptionImg extends React.Component {
   render() {
     const { image } = this.state;
     const { name, gallery, inStock } = this.props;
-    console.log(inStock);
     return (
       <ProductDescriptionImgStyles>
         <div className="gallery">
