@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {
   HeaderStyles,
-  NavMenuStyles,
   CartCurrencyStyles,
   CartIMg
 } from './styles/HeaderStyles';
@@ -9,18 +8,21 @@ import logo from '../assets/icons/logo.svg';
 import emptyCart from '../assets/icons/emptyCart.svg';
 import CurrenciesList from './currencies/CurrencySwitcher';
 import { NavLink } from 'react-router-dom';
-import { Query } from '@apollo/client/react/components';
-import CATEGORIES from '../apollo/categoriesQuery';
 import { CartContext } from './cart/CartContext';
 import MenuCart from './minicart/MenuCart';
+import Nav from './Nav';
 
 export class Header extends Component {
   static contextType = CartContext;
+
   cartToggleButtonRef = React.createRef();
+
   state = { isCartOpen: false };
+
   toggleList = () => {
     this.setState((prevState) => ({ isCartOpen: !prevState.isCartOpen }));
   };
+
   closeCart = () => {
     this.setState({ isCartOpen: false });
   };
@@ -34,28 +36,7 @@ export class Header extends Component {
     );
     return (
       <HeaderStyles>
-        <Query query={CATEGORIES}>
-          {({ loading, data, error }) => {
-            if (loading) return 'loading...';
-            if (error) return 'error';
-            if (data) {
-              const { categories } = data;
-              return (
-                <NavMenuStyles>
-                  <ul className="categories-nav-wrapper">
-                    {categories.map((category, categoryIndex) => (
-                      <li key={categoryIndex} className="categories-nav-item">
-                        <NavLink to={category.name} activeClassName="nav-link">
-                          {category.name}
-                        </NavLink>
-                      </li>
-                    ))}
-                  </ul>
-                </NavMenuStyles>
-              );
-            }
-          }}
-        </Query>
+        <Nav />
         <NavLink to={`/`}>
           <img src={logo} alt="logo" />
         </NavLink>
