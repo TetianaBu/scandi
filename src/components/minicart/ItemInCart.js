@@ -3,7 +3,7 @@ import {
   ItemInCartStyles,
   SizesButtonStyles,
   AmountWrapper
-} from '../styles/MenuCartStyles';
+} from '../styles/MiniCartStyles';
 import { getCurrencySymbol } from '../../lib/currency';
 
 export default class ItemInCart extends React.Component {

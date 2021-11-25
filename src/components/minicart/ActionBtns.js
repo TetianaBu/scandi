@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { ActionBtnStyles } from '../styles/MenuCartStyles';
+import { ActionBtnStyles } from '../styles/MiniCartStyles';
 
 export default class ActionBtns extends React.Component {
   render() {
