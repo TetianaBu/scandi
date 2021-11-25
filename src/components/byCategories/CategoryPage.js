@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { Query } from '@apollo/client/react/components';
-import { CartContext} from '../cart/CartContext';
+import { CartContext } from '../cart/CartContext';
 import { Redirect } from 'react-router-dom';
 import ProductItem from './ProductItem';
 import CategoryPageStyles from '../styles/CategoryPageStyles';
@@ -19,16 +19,20 @@ class CategoryPage extends Component {
         >
           {({ loading, data, error }) => {
             if (loading) return 'loading...';
-            if (error) return <Redirect to="/404"/>;
+            if (error) return <Redirect to="/404" />;
             if (data) {
               if (!data.category) {
-                return '/404';
+                return <Redirect to="/404" />;
               }
               const { products } = data.category;
               return (
                 <div className="category-page-inner-grid">
                   {products.map((product) => (
-                    <ProductItem product={product} key={product.id} category={category} />
+                    <ProductItem
+                      product={product}
+                      key={product.id}
+                      category={category}
+                    />
                   ))}
                 </div>
               );

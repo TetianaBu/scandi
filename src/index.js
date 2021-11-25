@@ -9,7 +9,13 @@ import Router from './components/Router';
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000/',
-  cache: new InMemoryCache()
+  cache: new InMemoryCache({
+    typePolicies: {
+      AttributeSet: {
+        keyFields: false,
+      }
+    }
+  })
 });
 
 ReactDOM.render(

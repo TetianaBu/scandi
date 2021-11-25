@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 
 const CURRENCIES = gql`
-  query {
+  query getCurrencies {
     currencies
   }
 `;

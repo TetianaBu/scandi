@@ -38,7 +38,7 @@ export const CartCurrencyStyles = styled.div`
   }
 `;
 
-export const CartIMg = styled.img`
+export const CartImg = styled.img`
   width: 20px;
   height: 20px;
 `;

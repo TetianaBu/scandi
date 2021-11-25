@@ -14,8 +14,6 @@ export const CurrenctSwitcherStyles = styled.div`
   font-size: 18px;
   font-weight: 500;
   line-height: 28.8px;
-  -webkit-box-shadow: 0px -1px 13px -1px rgba(196, 197, 199, 1);
-  -moz-box-shadow: 0px -1px 13px -1px rgba(196, 197, 199, 1);
   box-shadow: 0px -1px 13px -1px rgba(196, 197, 199, 1);
   input[type='radio'] {
     clip-path: polygon(0 0);

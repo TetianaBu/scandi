@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
   HeaderStyles,
   CartCurrencyStyles,
-  CartIMg
+  CartImg
 } from '../styles/HeaderStyles';
 import logo from '../../assets/icons/logo.svg';
 import emptyCart from '../../assets/icons/emptyCart.svg';
@@ -47,7 +47,7 @@ export class Header extends Component {
             className="cart-wrapper"
             onClick={this.toggleList}
           >
-            <CartIMg src={emptyCart} alt="cart" />
+            <CartImg src={emptyCart} alt="cart" />
             {itemsAmount > 0 && (
               <span className="items-amount">{itemsAmount}</span>
             )}

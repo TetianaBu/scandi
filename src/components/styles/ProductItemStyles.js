@@ -7,8 +7,6 @@ export const ProductItemStyles = styled.article`
   position: relative;
   &:hover,
   &:focus {
-    -webkit-box-shadow: 2px 2px 41px -7px rgba(181, 181, 185, 1);
-    -moz-box-shadow: 2px 2px 41px -7px rgba(181, 181, 185, 1);
     box-shadow: 2px 2px 41px -7px rgba(181, 181, 185, 1);
   }
   &:hover button {

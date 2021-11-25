@@ -18,7 +18,7 @@ export class Nav extends Component {
                 <ul className="categories-nav-wrapper">
                   {categories.map((category, categoryIndex) => (
                     <li key={categoryIndex} className="categories-nav-item">
-                      <NavLink to={category.name} activeClassName="nav-link">{category.name}</NavLink>
+                      <NavLink to={`/${category.name}`} activeClassName="nav-link">{category.name}</NavLink>
                     </li>
                   ))}
                 </ul>

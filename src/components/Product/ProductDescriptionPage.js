@@ -20,10 +20,12 @@ class ProductDescriptionPage extends React.Component {
           if (error) return <Redirect to="/404" />;
           if (data) {
             if (!data.product) {
-              return <Redirect to="/" />;
+              return <Redirect to="/404" />;
             }
-            const { name, brand, description, prices, gallery, inStock } =
+            const { name, brand, description, prices, gallery, inStock, attributes } =
               data.product;
+            const sizes = attributes.find(a => a.id === "Size");
+            console.log('parent sizes', sizes, name)
             return (
               <ProductDescriptionPageStyles>
                 <ProductDescriptionImg
@@ -36,7 +38,7 @@ class ProductDescriptionPage extends React.Component {
                     <h1> {brand}</h1>
                     <h2> {name}</h2>
                   </div>
-                  {category === 'clothes' && <Size />}
+                  {sizes && <Size sizes={sizes.items}/>}
                   <div className="price-wrapper">
                     <p className="price-title">Price:</p>
                     <CurrencyContext.Consumer>
