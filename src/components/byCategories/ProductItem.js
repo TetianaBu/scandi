@@ -3,13 +3,13 @@ import {
   ProductItemStyles,
   ItemImageWrapper,
   ProductItemButton
-} from './styles/ProductItemStyles';
-import emptyCart from '../assets/icons/emptyWhiteCart.svg';
-import { CurrencyContext } from './currencies/CurrencyContext';
-import { CartContext } from './cart/CartContext';
-import { getCurrencySymbol } from '../lib/currency';
+} from '../styles/ProductItemStyles';
+import emptyCart from '../../assets/icons/emptyWhiteCart.svg';
+import { CurrencyContext } from '../currencies/CurrencyContext';
+import { CartContext } from '../cart/CartContext';
+import { getCurrencySymbol } from '../../lib/currency';
 import { NavLink } from 'react-router-dom';
-import { OutOfStockStyles } from './styles/OutOfStockStyles';
+import { OutOfStockStyles } from '../styles/OutOfStockStyles';
 
 export class ProductItem extends Component {
   getPriceByCurrency = (currency) => {

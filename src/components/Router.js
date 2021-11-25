@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Header from './navigation/Header';
-import CategoryPage from './CategoryPage';
+import CategoryPage from './byCategories/CategoryPage';
 import ProductDescriptionPage from './product/ProductDescriptionPage';
 import Cart from './cart/Cart';
 import Start from './StartPage';

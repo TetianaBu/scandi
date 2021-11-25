@@ -1,10 +1,10 @@
 import { Component } from 'react';
 import { Query } from '@apollo/client/react/components';
-import { CartContext} from './cart/CartContext';
+import { CartContext} from '../cart/CartContext';
 import { Redirect } from 'react-router-dom';
 import ProductItem from './ProductItem';
-import CategoryPageStyles from './styles/CategoryPageStyles';
-import ALL_PRODUCTS_BY_CATEGORY from '../apollo/allProductsByCategoryQuery';
+import CategoryPageStyles from '../styles/CategoryPageStyles';
+import ALL_PRODUCTS_BY_CATEGORY from '../../apollo/allProductsByCategoryQuery';
 
 class CategoryPage extends Component {
   static contextType = CartContext;
