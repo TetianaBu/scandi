@@ -1,5 +1,8 @@
 import React from 'react';
-import {ProductDescriptionPageStyles, ProductDescription} from '../styles/ProductDescriptionPageStyles';
+import {
+  ProductDescriptionPageStyles,
+  ProductDescription
+} from '../styles/ProductDescriptionPageStyles';
 import { Query } from '@apollo/client/react/components';
 import PRODUCT_DETAILED_DESCRIPTION from '../../apollo/productDetailedDescriptionQuery';
 import { CurrencyContext } from '../currencies/CurrencyContext';
@@ -48,7 +51,9 @@ class ProductDescriptionPage extends React.Component {
                     <h1> {brand}</h1>
                     <h2> {name}</h2>
                   </div>
+
                   {sizes && <Size sizes={sizes.items} />}
+
                   {colors && <Color colors={colors.items} />}
                   {category === 'tech' && (
                     <TechAttributes attributes={attributes} />
@@ -74,7 +79,7 @@ class ProductDescriptionPage extends React.Component {
                         onClick={() => addItemToCart(data.product)}
                         disabled={!inStock}
                       >
-                        Add to cart
+                        {inStock ? ' Add to cart' : 'Sold Out!'}
                       </button>
                     )}
                   </CartContext.Consumer>

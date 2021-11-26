@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import Size from '../product/Size';
 export const Styles = styled.div`
   button {
     width: 40px;
@@ -15,6 +15,15 @@ export const Styles = styled.div`
     background-color: var(--primary-dark);
     color: white;
   }
+  div {
+    p {
+      display: none;
+    }
+    button {
+      max-width: 35px;
+      height: 25px;
+    }
+  }
 `;
 
 class AttributesInCart extends React.Component {
@@ -22,7 +31,6 @@ class AttributesInCart extends React.Component {
     const { attributes } = this.props;
     const capacity = attributes.find((a) => a.id === 'Capacity')?.items;
     const sizes = attributes.find((a) => a.id === 'Size')?.items;
-    console.log(attributes);
     return (
       <Styles>
         {capacity && (
@@ -32,13 +40,7 @@ class AttributesInCart extends React.Component {
             ))}
           </div>
         )}
-        {sizes && (
-          <>
-            {sizes.map((item, id) => (
-              <button key={id}>{item.value}</button>
-            ))}
-          </>
-        )}
+        {sizes && <Size sizes={sizes} />}
       </Styles>
     );
   }

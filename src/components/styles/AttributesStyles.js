@@ -28,6 +28,10 @@ export const SizeStyles = styled.div`
       color: white;
     }
   }
+  .selected {
+    background-color: var(--primary-dark);
+    color: white;
+  }
 `;
 
 export const ColorStyles = styled.div`
@@ -58,4 +62,5 @@ export const TechAttrStyles = styled.div`
   .tech-attr-wrapper p {
     margin-bottom: 0.2rem;
   }
+
 `;

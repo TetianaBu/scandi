@@ -4,7 +4,8 @@ export const CartContext = React.createContext();
 
 export class CartContextProvider extends Component {
   state = {
-    itemsAddedToCart: []
+    itemsAddedToCart: [],
+    selectedSizeIndex: 0,
   };
 
   addItemToCart = (productToAdd) => {
@@ -49,14 +50,14 @@ export class CartContextProvider extends Component {
     });
   };
 
-
   render() {
+    console.log(this.itemsAddedToCart, "cont")
     return (
       <CartContext.Provider
         value={{
           itemsAddedToCart: this.state.itemsAddedToCart,
           addItemToCart: this.addItemToCart,
-          removeItemFromCart: this.removeItemFromCart,
+          removeItemFromCart: this.removeItemFromCart
         }}
       >
         {this.props.children}
