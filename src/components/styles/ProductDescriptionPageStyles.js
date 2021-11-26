@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
-const ProductDescriptionPageStyles = styled.article`
+export const ProductDescriptionPageStyles = styled.article`
   display: grid;
   grid-template-columns: 55% 292px;
-  max-height: 560px;
   column-gap: 5%;
   padding: 3rem;
+`;
+
+export const ProductDescription = styled.div`
   .add-btn {
     background-color: var(--primary-light);
     border: none;
@@ -20,8 +22,6 @@ const ProductDescriptionPageStyles = styled.article`
       background-color: var(--primary-light-btn);
     }
     &:disabled {
-      opacity: 0.8;
-      cursor: auto;
       &:hover {
         background-color: var(--primary-light);
       }
@@ -37,5 +37,3 @@ const ProductDescriptionPageStyles = styled.article`
     font-size: 24px;
   }
 `;
-
-export default ProductDescriptionPageStyles;

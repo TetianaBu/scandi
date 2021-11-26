@@ -72,3 +72,8 @@ button, a {
 a {
   text-decoration: none;
 }
+
+button:disabled {
+  opacity: 0.8;
+  cursor: auto;
+}

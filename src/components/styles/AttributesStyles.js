@@ -29,3 +29,33 @@ export const SizeStyles = styled.div`
     }
   }
 `;
+
+export const ColorStyles = styled.div`
+  p {
+    margin-bottom: 0.2rem;
+  }
+  button {
+    width: 63px;
+    height: 45px;
+    margin-right: 0.5rem;
+    border: 1px solid var(--primary-dark);
+  }
+`;
+
+export const TechAttrStyles = styled.div`
+  button {
+    width: 63px;
+    height: 45px;
+    border: 1px solid var(--primary-dark);
+    margin-right: 0.5rem;
+    background-color: white;
+    color: var(--primary-dark);
+    :hover {
+      background-color: var(--primary-dark);
+      color: white;
+    }
+  }
+  .tech-attr-wrapper p {
+    margin-bottom: 0.2rem;
+  }
+`;

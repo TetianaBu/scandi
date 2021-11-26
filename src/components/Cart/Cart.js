@@ -2,13 +2,13 @@ import React from 'react';
 import {
   CartStyles,
   ItemInCartStyles,
-  AmountWrapper,
-  SizesButtonStyles
+  AmountWrapper
 } from '../styles/CartStyles';
 import { CurrencyContext } from '../currencies/CurrencyContext';
 import { CartContext } from './CartContext';
 import { getCurrencySymbol } from '../../lib/currency';
 import CartCarousel from './CartCarousel';
+import AttributesInCart from './AttributesInCart';
 
 class Cart extends React.Component {
   render() {
@@ -35,10 +35,9 @@ class Cart extends React.Component {
                       </p>
                     )}
                   </CurrencyContext.Consumer>
-                  <SizesButtonStyles>
-                    <button>S</button>
-                    <button>M</button>{' '}
-                  </SizesButtonStyles>
+                  {item.product.attributes && (
+                    <AttributesInCart attributes={item.product.attributes} />
+                  )}
                 </div>
                 <div className="row-with-gallery">
                   <AmountWrapper>
@@ -50,7 +49,6 @@ class Cart extends React.Component {
                       &#8211;{' '}
                     </button>
                   </AmountWrapper>
-
                   <CartCarousel gallery={item.product.gallery}></CartCarousel>
                 </div>
               </ItemInCartStyles>

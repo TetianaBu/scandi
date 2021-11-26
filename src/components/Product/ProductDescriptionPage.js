@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductDescriptionPageStyles from '../styles/ProductDescriptionPageStyles';
+import {ProductDescriptionPageStyles, ProductDescription} from '../styles/ProductDescriptionPageStyles';
 import { Query } from '@apollo/client/react/components';
 import PRODUCT_DETAILED_DESCRIPTION from '../../apollo/productDetailedDescriptionQuery';
 import { CurrencyContext } from '../currencies/CurrencyContext';
@@ -9,6 +9,8 @@ import Size from './Size';
 import ProductDescriptionImg from './ProductDescriptionImg';
 import Description from './Description';
 import { Redirect } from 'react-router-dom';
+import Color from './Color';
+import TechAttributes from './TechAttributes';
 
 class ProductDescriptionPage extends React.Component {
   render() {
@@ -22,10 +24,18 @@ class ProductDescriptionPage extends React.Component {
             if (!data.product) {
               return <Redirect to="/404" />;
             }
-            const { name, brand, description, prices, gallery, inStock, attributes } =
-              data.product;
-            const sizes = attributes.find(a => a.id === "Size");
-            console.log('parent sizes', sizes, name)
+            const {
+              name,
+              brand,
+              description,
+              prices,
+              gallery,
+              inStock,
+              attributes
+            } = data.product;
+            const sizes = attributes.find((a) => a.id === 'Size');
+            const colors = attributes.find((a) => a.id === 'Color');
+
             return (
               <ProductDescriptionPageStyles>
                 <ProductDescriptionImg
@@ -33,12 +43,16 @@ class ProductDescriptionPage extends React.Component {
                   name={name}
                   inStock={inStock}
                 ></ProductDescriptionImg>
-                <div key={id}>
+                <ProductDescription key={id}>
                   <div className="titles-wrapper">
                     <h1> {brand}</h1>
                     <h2> {name}</h2>
                   </div>
-                  {sizes && <Size sizes={sizes.items}/>}
+                  {sizes && <Size sizes={sizes.items} />}
+                  {colors && <Color colors={colors.items} />}
+                  {category === 'tech' && (
+                    <TechAttributes attributes={attributes} />
+                  )}
                   <div className="price-wrapper">
                     <p className="price-title">Price:</p>
                     <CurrencyContext.Consumer>
@@ -65,7 +79,7 @@ class ProductDescriptionPage extends React.Component {
                     )}
                   </CartContext.Consumer>
                   {{ description } && <Description text={description} />}
-                </div>
+                </ProductDescription>
               </ProductDescriptionPageStyles>
             );
           }

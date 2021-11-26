@@ -44,21 +44,6 @@ export const ItemInCartStyles = styled.div`
     line-height: 18px;
   }
 `;
-export const SizesButtonStyles = styled.div`
-  display: flex;
-  flex-direction: row;
-
-  button {
-    background-color: white;
-    height: 45px;
-    width: 63px;
-    font-size: 16px;
-    font-weight: 400;
-    border: 1px solid var(--primary-dark);
-    font-family: 'Source Sans Pro', sans-serif;
-    margin-right: 12px;
-  }
-`;
 export const AmountWrapper = styled.div`
   display: flex;
   flex-direction: column;

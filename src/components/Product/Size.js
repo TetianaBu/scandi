@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { SizeStyles } from '../styles/SizeStyles';
+import { SizeStyles } from '../styles/AttributesStyles';
 
 export class Size extends Component {
   render() {
     const { sizes } = this.props;
-    console.log({sizes})
     return (
       <SizeStyles>
         <p className="sizes-title">Size:</p>
