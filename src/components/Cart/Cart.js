@@ -19,7 +19,7 @@ class Cart extends React.Component {
             <h1>Cart</h1>
             {itemsAddedToCart.length === 0 && <p>Your cart is empty</p>}
             {itemsAddedToCart.map((item, index) => (
-              <ItemInCartStyles key={index}>
+              <ItemInCartStyles key={item.product.id + index}>
                 <div className="item-description">
                   <h4>{item.product.brand}</h4>
                   <h5>{item.product.name}</h5>
@@ -39,7 +39,11 @@ class Cart extends React.Component {
                 </div>
                 <div className="row-with-gallery">
                   <AmountWrapper>
-                    <button onClick={() => addItemToCart(item.product)}>
+                    <button
+                      onClick={() =>
+                        addItemToCart(item.product, item.attributes)
+                      }
+                    >
                       &#43;{' '}
                     </button>
                     <p>{item.amount}</p>

@@ -6,6 +6,7 @@ import AttributesInCart from '../cart/AttributesInCart';
 export default class ItemInCart extends React.Component {
   render() {
     const { currency, addItemToCart, removeItemFromCart, item } = this.props;
+    console.log(item)
     return (
       <ItemInCartStyles>
         <div className="item-description">
@@ -24,7 +25,11 @@ export default class ItemInCart extends React.Component {
         </div>
         <div className="row-with-gallery">
           <AmountWrapper>
-            <button onClick={() => addItemToCart(item.product)}>&#43; </button>
+            <button
+              onClick={() => addItemToCart(item.product, item.attributes)}
+            >
+              &#43;{' '}
+            </button>
             <p>{item.amount}</p>
             <button onClick={() => removeItemFromCart(item.product)}>
               &#8211;{' '}

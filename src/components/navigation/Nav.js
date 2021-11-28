@@ -16,8 +16,8 @@ export class Nav extends Component {
             return (
               <NavMenuStyles>
                 <ul className="categories-nav-wrapper">
-                  {categories.map((category, categoryIndex) => (
-                    <li key={categoryIndex} className="categories-nav-item">
+                  {categories.map((category) => (
+                    <li key={category.name} className="categories-nav-item">
                       <NavLink to={`/${category.name}`} activeClassName="nav-link">{category.name}</NavLink>
                     </li>
                   ))}

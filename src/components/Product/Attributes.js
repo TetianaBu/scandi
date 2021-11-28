@@ -27,7 +27,10 @@ export class Attributes extends Component {
 
   render() {
     const { attributes, selectedAttributes } = this.props;
-    if (attributes.length === 0) return;
+    console.log(attributes.length )
+    if (attributes.length === 0) {
+      return console.log('here');
+    }
     return (
       <AttrStyles>
         {attributes.map((attribute) => {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 
 export const CartContext = React.createContext();
 
@@ -9,10 +10,12 @@ export class CartContextProvider extends Component {
   };
 
   addItemToCart = (productToAdd, attributes) => {
-    console.log({productToAdd, attributes})
+    console.log({ productToAdd, attributes });
     this.setState((previousState) => {
       const existingItem = previousState.itemsAddedToCart.find(
-        (item) => item.product.id === productToAdd.id
+        (item) =>
+          item.product.id === productToAdd.id &&
+          _.isEqual(item.attributes, attributes)
       );
       if (existingItem) {
         const newCartItems = [...previousState.itemsAddedToCart];
@@ -57,7 +60,6 @@ export class CartContextProvider extends Component {
   };
 
   render() {
-    console.log(this.itemsAddedToCart, 'cont');
     return (
       <CartContext.Provider
         value={{

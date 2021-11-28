@@ -2,26 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 
 export const Styles = styled.div`
-  button {
-    width: 40px;
-    height: 30px;
+  display: flex;
+  flex-direction: row;
+  ul {
+    list-style: none;
+    padding: 0;
     font-size: 10px;
-    padding: 0.1rem;
-    background-color: white;
-    border: 1px solid var(--primary-dark);
-    margin-right: 0.2rem;
-  }
-  button:hover {
-    background-color: var(--primary-dark);
-    color: white;
-  }
-  div {
-    p {
-      display: none;
+    margin: 0.2rem 0.2rem 0.2rem 0;
+    li {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 0.2rem;
     }
-    button {
-      max-width: 35px;
-      height: 25px;
+    span {
+      border: 1px solid var(--primary-dark);
+      padding: 0.2rem;
     }
   }
 `;
@@ -33,13 +28,18 @@ class AttributesInCart extends React.Component {
     const attributeArray = Object.values(attributes);
     return (
       <Styles>
-        <pre>
-          {attributeArray.map(({ attribute, value }) => (
-            <div key={attribute.id}>
-              {attribute.name}: {value}
-            </div>
-          ))}
-        </pre>
+        {attributeArray.map(({ attribute, value }) => (
+          <ul key={attribute.name}>
+            <li key={attribute.id}>
+              {' '}
+              {(attribute.id === 'Touch ID in keyboard' ||
+                attribute.id === 'With USB 3 ports') && (
+                <span>{attribute.name}</span>
+              )}
+              <span> {value}</span>
+            </li>
+          </ul>
+        ))}
       </Styles>
     );
   }

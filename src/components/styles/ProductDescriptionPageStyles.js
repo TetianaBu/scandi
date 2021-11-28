@@ -7,7 +7,7 @@ export const ProductDescriptionPageStyles = styled.article`
   padding: 3rem;
 `;
 
-export const ProductDescription = styled.div`
+export const ProductDescriptionStyles = styled.div`
   .add-btn {
     background-color: var(--primary-light);
     border: none;

@@ -54,7 +54,7 @@ export default class InnerMenuCart extends React.Component {
       default:
         amountLabel = `, ${amount} items`;
     }
-
+console.log(itemsAddedToCart, 'minicart items')
     return (
       <div ref={this.wrapperRef}>
         <p className="bag-title">

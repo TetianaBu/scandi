@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Header from './navigation/Header';
 import CategoryPage from './byCategories/CategoryPage';
-import ProductDescriptionPage from './product/ProductDescriptionPage';
+import ProductMain from './product/ProductMain';
 import Cart from './cart/Cart';
 import Start from './StartPage';
 import NotFound from './NotFound';
@@ -31,7 +31,7 @@ class Router extends Component {
               match: {
                 params: { id, category }
               }
-            }) => <ProductDescriptionPage id={id} category={category} />}
+            }) => <ProductMain id={id} category={category} />}
           ></Route>
           <Route path="*" component={NotFound} />
         </Switch>
