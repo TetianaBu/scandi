@@ -7,7 +7,6 @@ export class Attributes extends Component {
     if (attribute.id === 'Color') {
       style = { background: attributeItem.value, color: attributeItem.value };
     }
-
     return (
       <button
         key={attributeItem.value}
@@ -20,7 +19,7 @@ export class Attributes extends Component {
           })
         }
       >
-        {attributeItem.displayValue}
+        {attributeItem.value}
       </button>
     );
   }

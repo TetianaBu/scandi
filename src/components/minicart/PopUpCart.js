@@ -1,10 +1,10 @@
 import React from 'react';
 import { CurrencyContext } from '../currencies/CurrencyContext';
 import { CartContext } from '../cart/CartContext';
-import InnerMenuCart from './InnerMenuCart';
+import InnerPopUpCart from './InnerPopUpCart';
 import { MenuCartStyles, OuterWrapper } from '../styles/MiniCartStyles';
 
-class MenuCart extends React.Component {
+class PopUpCart extends React.Component {
   render() {
     const { onClose, cartToggleButtonRef } = this.props;
     return (
@@ -14,7 +14,7 @@ class MenuCart extends React.Component {
             {({ currency }) => (
               <CartContext.Consumer>
                 {({ itemsAddedToCart, addItemToCart, removeItemFromCart }) => (
-                  <InnerMenuCart
+                  <InnerPopUpCart
                     itemsAddedToCart={itemsAddedToCart}
                     addItemToCart={addItemToCart}
                     removeItemFromCart={removeItemFromCart}
@@ -32,4 +32,4 @@ class MenuCart extends React.Component {
   }
 }
 
-export default MenuCart;
+export default PopUpCart;

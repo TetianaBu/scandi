@@ -9,7 +9,7 @@ import emptyCart from '../../assets/icons/emptyCart.svg';
 import CurrenciesList from '../currencies/CurrencySwitcher';
 import { NavLink } from 'react-router-dom';
 import { CartContext } from '../cart/CartContext';
-import MenuCart from '../minicart/MenuCart';
+import PopUpCart from '../minicart/PopUpCart';
 import Nav from './Nav';
 
 export class Header extends Component {
@@ -53,7 +53,7 @@ export class Header extends Component {
             )}
           </button>
           {isCartOpen && (
-            <MenuCart
+            <PopUpCart
               onClose={this.closeCart}
               cartToggleButtonRef={this.cartToggleButtonRef}
             />

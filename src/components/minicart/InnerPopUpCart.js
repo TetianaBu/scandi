@@ -3,7 +3,7 @@ import { getCurrencySymbol } from '../../lib/currency';
 import ActionBtns from './ActionBtns';
 import ItemInCart from './ItemInCart';
 
-export default class InnerMenuCart extends React.Component {
+class InnerPopUpCart extends React.Component {
   onClick = (event) => {
     if (
       this.wrapperRef &&
@@ -54,7 +54,6 @@ export default class InnerMenuCart extends React.Component {
       default:
         amountLabel = `, ${amount} items`;
     }
-console.log(itemsAddedToCart, 'minicart items')
     return (
       <div ref={this.wrapperRef}>
         <p className="bag-title">
@@ -88,3 +87,6 @@ console.log(itemsAddedToCart, 'minicart items')
     );
   }
 }
+
+
+export default InnerPopUpCart;
