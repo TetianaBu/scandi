@@ -35,9 +35,7 @@ class Cart extends React.Component {
                       </p>
                     )}
                   </CurrencyContext.Consumer>
-                  {item.product.attributes && (
-                    <AttributesInCart attributes={item.product.attributes} />
-                  )}
+                  <AttributesInCart attributes={item.attributes} />
                 </div>
                 <div className="row-with-gallery">
                   <AmountWrapper>

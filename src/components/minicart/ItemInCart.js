@@ -20,9 +20,7 @@ export default class ItemInCart extends React.Component {
                 ?.amount * item.amount
             ).toFixed(2)}
           </p>
-          {item.product.attributes && (
-            <AttributesInCart attributes={item.product.attributes} />
-          )}
+          <AttributesInCart attributes={item.attributes} />
         </div>
         <div className="row-with-gallery">
           <AmountWrapper>

@@ -5,17 +5,22 @@ export const CartContext = React.createContext();
 export class CartContextProvider extends Component {
   state = {
     itemsAddedToCart: [],
-    selectedSizeIndex: 0,
+    selectedSizeIndex: 0
   };
 
-  addItemToCart = (productToAdd) => {
+  addItemToCart = (productToAdd, attributes) => {
+    console.log({productToAdd, attributes})
     this.setState((previousState) => {
       const existingItem = previousState.itemsAddedToCart.find(
         (item) => item.product.id === productToAdd.id
       );
       if (existingItem) {
         const newCartItems = [...previousState.itemsAddedToCart];
-        const newItem = { ...existingItem, amount: existingItem.amount + 1 };
+        const newItem = {
+          ...existingItem,
+          amount: existingItem.amount + 1,
+          attributes
+        };
         const index = newCartItems.indexOf(existingItem);
         newCartItems.splice(index, 1, newItem);
         return {
@@ -25,12 +30,13 @@ export class CartContextProvider extends Component {
         return {
           itemsAddedToCart: [
             ...previousState.itemsAddedToCart,
-            { product: productToAdd, amount: 1 }
+            { product: productToAdd, amount: 1, attributes }
           ]
         };
       }
     });
   };
+
   removeItemFromCart = (productToRemove) => {
     this.setState((previousState) => {
       const existingItem = previousState.itemsAddedToCart.find(
@@ -51,7 +57,7 @@ export class CartContextProvider extends Component {
   };
 
   render() {
-    console.log(this.itemsAddedToCart, "cont")
+    console.log(this.itemsAddedToCart, 'cont');
     return (
       <CartContext.Provider
         value={{
