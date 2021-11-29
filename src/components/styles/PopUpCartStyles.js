@@ -5,8 +5,8 @@ export const OuterWrapper = styled.div`
   top: 80px;
   background: rgba(57, 55, 72, 0.22);
   width: 100%;
+  min-height: 150vh;
   right: 0;
-  height: 100vh;
   z-index: 3;
 `;
 export const PopUpCartStyles = styled.div`
