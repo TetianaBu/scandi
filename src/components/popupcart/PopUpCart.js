@@ -2,14 +2,14 @@ import React from 'react';
 import { CurrencyContext } from '../currencies/CurrencyContext';
 import { CartContext } from '../cart/CartContext';
 import InnerPopUpCart from './InnerPopUpCart';
-import { MenuCartStyles, OuterWrapper } from '../styles/MiniCartStyles';
+import { PopUpCartStyles, OuterWrapper } from '../styles/PopUpCartStyles';
 
 class PopUpCart extends React.Component {
   render() {
     const { onClose, cartToggleButtonRef } = this.props;
     return (
       <OuterWrapper>
-        <MenuCartStyles>
+        <PopUpCartStyles>
           <CurrencyContext.Consumer>
             {({ currency }) => (
               <CartContext.Consumer>
@@ -26,7 +26,7 @@ class PopUpCart extends React.Component {
               </CartContext.Consumer>
             )}
           </CurrencyContext.Consumer>
-        </MenuCartStyles>
+        </PopUpCartStyles>
       </OuterWrapper>
     );
   }

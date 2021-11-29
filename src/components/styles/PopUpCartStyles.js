@@ -9,11 +9,10 @@ export const OuterWrapper = styled.div`
   height: 100vh;
   z-index: 3;
 `;
-export const MenuCartStyles = styled.div`
+export const PopUpCartStyles = styled.div`
   display: flex;
   flex-direction: column;
   width: 325px;
-  max-height: 700px;
   position: absolute;
   background-color: white;
   top: 0;
@@ -61,7 +60,7 @@ export const ActionBtnStyles = styled.div`
 export const ItemInCartStyles = styled.div`
   display: grid;
   grid-template-columns: 146px 140px;
-  height: 177px;
+  min-height: 177px;
   justify-content: space-between;
   align-content: stretch;
   align-items: stretch;
@@ -69,8 +68,9 @@ export const ItemInCartStyles = styled.div`
   margin-bottom: 20px;
   .img-cart {
     object-fit: cover;
+    object-position: center;
     width: 105px;
-    height: 137px;
+    min-height: 137px;
   }
   .row-with-gallery {
     display: flex;
@@ -81,8 +81,8 @@ export const ItemInCartStyles = styled.div`
     flex-direction: column;
     align-items: flex-start;
     align-content: flex-start;
-    justify-content: space-between;
-    height: 137px;
+    justify-content: flex-start;
+    min-height: 137px;
   }
   .titles-wrapper {
     text-align: start;

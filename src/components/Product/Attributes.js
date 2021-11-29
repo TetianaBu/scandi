@@ -4,9 +4,12 @@ import { AttrStyles } from '../styles/AttributesStyles';
 export class Attributes extends Component {
   renderAttributeButton({ attributeItem, attribute, selected }) {
     let style = {};
+    let text = attributeItem.value;
     if (attribute.id === 'Color') {
       style = { background: attributeItem.value, color: attributeItem.value };
+      text = attributeItem.displayValue;
     }
+
     return (
       <button
         key={attributeItem.value}
@@ -15,18 +18,19 @@ export class Attributes extends Component {
         onClick={() =>
           this.props.onAttributeSelect({
             attribute,
-            value: attributeItem.value
+            value: attributeItem.value,
+            displayValue: attributeItem.displayValue
           })
         }
       >
-        {attributeItem.value}
+        {text}
       </button>
     );
   }
 
   render() {
     const { attributes, selectedAttributes } = this.props;
-    console.log(attributes.length )
+    console.log(attributes.length);
     if (attributes.length === 0) {
       return console.log('here');
     }
@@ -41,7 +45,10 @@ export class Attributes extends Component {
                   attributeItem: item,
                   attribute,
                   selected:
-                    selectedAttributes[attribute.id]?.value === item.value
+                    selectedAttributes[attribute.id]?.value === item.value,
+                  selectedDisplay:
+                    selectedAttributes[attribute.id]?.displayValue ===
+                    item.displayValue
                 })
               )}
             </div>

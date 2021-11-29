@@ -10,17 +10,16 @@ import ProductDescriptionImg from './ProductDescriptionImg';
 import Description from './Description';
 import Attributes from './Attributes';
 
-
 class Product extends React.Component {
   state = {
     selectedAttributes: {}
   };
 
-  onAttributeSelect = ({ attribute, value }) => {
+  onAttributeSelect = ({ attribute, value, displayValue }) => {
     this.setState(({ selectedAttributes }) => ({
       selectedAttributes: {
         ...selectedAttributes,
-        [attribute.id]: { attribute, value }
+        [attribute.id]: { attribute, value, displayValue }
       }
     }));
   };
@@ -32,7 +31,11 @@ class Product extends React.Component {
         selectedAttributes: Object.fromEntries(
           attributes.map((attribute) => [
             attribute.id,
-            { attribute, value: attribute.items[0]?.value }
+            {
+              attribute,
+              value: attribute.items[0]?.value,
+              displayValue: attribute.items[0]?.displayValue
+            }
           ])
         )
       });
@@ -42,7 +45,7 @@ class Product extends React.Component {
   render() {
     const { name, brand, description, prices, gallery, inStock, attributes } =
       this.props.product;
-      console.log(attributes)
+    console.log(attributes);
     return (
       <ProductDescriptionPageStyles>
         <ProductDescriptionImg

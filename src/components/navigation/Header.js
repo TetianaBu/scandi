@@ -9,7 +9,7 @@ import emptyCart from '../../assets/icons/emptyCart.svg';
 import CurrenciesList from '../currencies/CurrencySwitcher';
 import { NavLink } from 'react-router-dom';
 import { CartContext } from '../cart/CartContext';
-import PopUpCart from '../minicart/PopUpCart';
+import PopUpCart from '../popupcart/PopUpCart';
 import Nav from './Nav';
 
 export class Header extends Component {

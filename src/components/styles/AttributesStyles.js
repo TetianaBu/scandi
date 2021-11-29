@@ -26,3 +26,16 @@ export const AttrStyles = styled.div`
     color: white;
   }
 `;
+
+export const AttrInPopUpCartStyles = styled.div`
+  display: flex;
+  flex-direction: column;
+  p {
+    span {
+      font-size: 10px;
+      padding: 0.2rem 0.4rem;
+      color: white;
+      background-color: var(--primary-dark);
+    }
+  }
+`;

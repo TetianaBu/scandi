@@ -61,7 +61,7 @@ class InnerPopUpCart extends React.Component {
           {amountLabel}
         </p>
         {amount > 0 && (
-          <div>
+          <div className="item-pop-up-cart">
             {itemsAddedToCart.map((item, index) => (
               <ItemInCart
                 item={item}
@@ -87,6 +87,5 @@ class InnerPopUpCart extends React.Component {
     );
   }
 }
-
 
 export default InnerPopUpCart;

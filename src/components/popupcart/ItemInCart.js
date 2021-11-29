@@ -1,26 +1,28 @@
 import React from 'react';
-import { ItemInCartStyles, AmountWrapper } from '../styles/MiniCartStyles';
+import { ItemInCartStyles, AmountWrapper } from '../styles/PopUpCartStyles';
 import { getCurrencySymbol } from '../../lib/currency';
 import AttributesInCart from '../cart/AttributesInCart';
 
 export default class ItemInCart extends React.Component {
   render() {
     const { currency, addItemToCart, removeItemFromCart, item } = this.props;
-    console.log(item)
+    console.log(item);
     return (
       <ItemInCartStyles>
         <div className="item-description">
-          <div className="titles-wrapper">
-            <h4>{item.product.brand}</h4>
-            <h5>{item.product.name}</h5>
+          <div>
+            <div className="titles-wrapper">
+              <h4>{item.product.brand}</h4>
+              <h5>{item.product.name}</h5>
+            </div>
+            <p className="price">
+              {getCurrencySymbol(currency)}
+              {(
+                item.product.prices.find((price) => price.currency === currency)
+                  ?.amount * item.amount
+              ).toFixed(2)}
+            </p>
           </div>
-          <p className="price">
-            {getCurrencySymbol(currency)}
-            {(
-              item.product.prices.find((price) => price.currency === currency)
-                ?.amount * item.amount
-            ).toFixed(2)}
-          </p>
           <AttributesInCart attributes={item.attributes} />
         </div>
         <div className="row-with-gallery">
