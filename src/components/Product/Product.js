@@ -45,7 +45,6 @@ class Product extends React.Component {
   render() {
     const { name, brand, description, prices, gallery, inStock, attributes } =
       this.props.product;
-    console.log(attributes);
     return (
       <ProductDescriptionPageStyles>
         <ProductDescriptionImg

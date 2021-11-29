@@ -6,7 +6,6 @@ import AttributesInCart from '../cart/AttributesInCart';
 export default class ItemInCart extends React.Component {
   render() {
     const { currency, addItemToCart, removeItemFromCart, item } = this.props;
-    console.log(item);
     return (
       <ItemInCartStyles>
         <div className="item-description">

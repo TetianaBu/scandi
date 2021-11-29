@@ -10,7 +10,6 @@ export class CartContextProvider extends Component {
   };
 
   addItemToCart = (productToAdd, attributes) => {
-    console.log({ productToAdd, attributes });
     this.setState((previousState) => {
       const existingItem = previousState.itemsAddedToCart.find(
         (item) =>
