@@ -38,11 +38,17 @@ export const AttrInPopUpCartStyles = styled.div`
   display: flex;
   flex-direction: column;
   p {
+    display: grid;
+    min-width: 45px;
+    margin-bottom: 0.3rem;
     span {
       font-size: 10px;
-      padding: 0.2rem 0.4rem;
+      padding: 2px 4px;
       color: white;
+      text-align: center;
       background-color: var(--primary-dark);
+    }
+    .width {
     }
   }
 `;

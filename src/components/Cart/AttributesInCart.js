@@ -11,7 +11,7 @@ class AttributesInCart extends React.Component {
         {attributeArray.map(({ attribute, value, displayValue }) => (
           <p key={attribute.id}>
             {attribute.id === 'Touch ID in keyboard' && value === 'Yes' && (
-              <span>{attribute.name}</span>
+              <span className="with">{attribute.name}</span>
             )}
             {attribute.id === 'With USB 3 ports' && value === 'Yes' && (
               <span>{attribute.name}</span>
@@ -20,7 +20,7 @@ class AttributesInCart extends React.Component {
               attribute.id !== 'With USB 3 ports' &&
               attribute.id !== 'Color' && <span>{value}</span>}
             {attribute.id === 'Color' && (
-              <span style={{ background: `${value}`, color: `${value}` }}>
+              <span className="width" style={{ background: `${value}`, color: `${value}` }}>
                 {displayValue}
               </span>
             )}
