@@ -29,8 +29,7 @@ export const ItemImageWrapper = styled.div`
   margin-bottom: 0.5rem;
   position: relative;
   .item-img {
-    height: 330px;
-    width: 354px;
+    height: 338px;
     object-fit: cover;
   }
 `;
@@ -43,7 +42,7 @@ export const ProductItemButton = styled.button`
   border: none;
   position: absolute;
   top: 90%;
-  left: 82%;
+  left: 86.5%;
   cursor: pointer;
   visibility: hidden;
   .cart-svg {

@@ -2,6 +2,8 @@
   --primary-light: #5ECE7B;
   --primary-light-btn: #2bb84e;
   --primary-dark: #1D1F22;
+  --light-grey: #8D8F9A;
+  --grey: #393748;
 }
 
 @font-face {
@@ -74,7 +76,6 @@ a {
 }
 
 button:disabled {
-  opacity: 0.8;
+  opacity: 0.5;
   cursor: auto;
 }
-

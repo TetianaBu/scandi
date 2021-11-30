@@ -15,8 +15,7 @@ export const ProductDescriptionImgStyles = styled.div`
   }
   .main-img-wrapper {
     position: relative;
-    display: grid;
-    place-items: center;
+    display: flex;
     img {
       object-fit: contain;
     }

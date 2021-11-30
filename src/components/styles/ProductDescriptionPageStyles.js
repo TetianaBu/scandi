@@ -22,8 +22,9 @@ export const ProductDescriptionStyles = styled.div`
       background-color: var(--primary-light-btn);
     }
     &:disabled {
+      background-color: var(--light-grey);
       &:hover {
-        background-color: var(--primary-light);
+        background-color: var(--light-grey);
       }
     }
   }

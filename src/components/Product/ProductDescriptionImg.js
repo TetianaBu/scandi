@@ -33,9 +33,11 @@ class ProductDescriptionImg extends React.Component {
             />
           ))}
         </div>
-        <div className="main-img-wrapper">
+        <div>
+          <div className="main-img-wrapper">
         <img src={this.changeImage(image, gallery)} alt={name} />
         {!inStock && <OutOfStockStyles>OUT OF STOCK</OutOfStockStyles>}
+        </div>
         </div>
       </ProductDescriptionImgStyles>
     );
