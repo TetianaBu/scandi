@@ -33,7 +33,7 @@ export class ProductItem extends Component {
             </ProductItemButton>
           </ItemImageWrapper>
           <p className="product-title">
-            <NavLink to={`/${category}/${id}`}>{name}</NavLink>
+            {name}
           </p>
           <CurrencyContext.Consumer>
             {({ currency }) => (
