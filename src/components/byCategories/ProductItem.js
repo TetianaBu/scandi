@@ -25,28 +25,26 @@ export class ProductItem extends Component {
     } = this.props.product;
     return (
       <ProductItemStyles>
-        <ItemImageWrapper>
-          <img src={firstImage} className="item-img" alt={name} />
-          {inStock && (
-            <NavLink to={`/${category}/${id}`}>
-              <ProductItemButton>
-                <img src={emptyCart} alt="cart" className="cart-svg" />
-              </ProductItemButton>
-            </NavLink>
-          )}
-        </ItemImageWrapper>
-        <p className="product-title">
-          <NavLink to={`/${category}/${id}`}>{name}</NavLink>
-        </p>
-        <CurrencyContext.Consumer>
-          {({ currency }) => (
-            <p className="product-price">
-              {getCurrencySymbol(currency)}
-              {this.getPriceByCurrency(currency)}
-            </p>
-          )}
-        </CurrencyContext.Consumer>
-        {!inStock && <OutOfStockStyles>OUT OF STOCK</OutOfStockStyles>}
+        <NavLink to={`/${category}/${id}`}>
+          <ItemImageWrapper>
+            <img src={firstImage} className="item-img" alt={name} />
+            <ProductItemButton>
+              <img src={emptyCart} alt="cart" className="cart-svg" />
+            </ProductItemButton>
+          </ItemImageWrapper>
+          <p className="product-title">
+            <NavLink to={`/${category}/${id}`}>{name}</NavLink>
+          </p>
+          <CurrencyContext.Consumer>
+            {({ currency }) => (
+              <p className="product-price">
+                {getCurrencySymbol(currency)}
+                {this.getPriceByCurrency(currency)}
+              </p>
+            )}
+          </CurrencyContext.Consumer>
+          {!inStock && <OutOfStockStyles>OUT OF STOCK</OutOfStockStyles>}
+        </NavLink>
       </ProductItemStyles>
     );
   }
