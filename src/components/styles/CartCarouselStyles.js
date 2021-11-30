@@ -6,7 +6,6 @@ export const CartCarouselStyles = styled.div`
   max-width: 100%;
   height: 185px;
   padding: 0 0.5rem;
-  overflow: scroll;
   position: relative;
   img {
     height: 100%;
