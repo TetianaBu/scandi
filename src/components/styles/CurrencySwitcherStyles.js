@@ -2,13 +2,12 @@ import styled from 'styled-components';
 
 export const CurrenctSwitcherStyles = styled.div`
   position: fixed;
-  padding-top: 1rem;
   padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
   z-index: 3;
   background-color: white;
-  top: 10%;
+  top: 60px;
   right: 2.5rem;
   width: 114px;
   font-size: 18px;
