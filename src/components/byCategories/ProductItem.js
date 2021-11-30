@@ -20,6 +20,7 @@ export class ProductItem extends Component {
     const {
       id,
       name,
+      brand,
       inStock,
       gallery: [firstImage]
     } = this.props.product;
@@ -33,7 +34,7 @@ export class ProductItem extends Component {
             </ProductItemButton>
           </ItemImageWrapper>
           <p className="product-title">
-            {name}
+            {name} <span>{brand}</span>
           </p>
           <CurrencyContext.Consumer>
             {({ currency }) => (
