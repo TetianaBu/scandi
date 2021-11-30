@@ -18,7 +18,7 @@ export default class ItemInCart extends React.Component {
               {getCurrencySymbol(currency)}
               {(
                 item.product.prices.find((price) => price.currency === currency)
-                  ?.amount * item.amount
+                  ?.amount
               ).toFixed(2)}
             </p>
           </div>

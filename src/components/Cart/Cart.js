@@ -30,7 +30,7 @@ class Cart extends React.Component {
                         {(
                           item.product.prices.find(
                             (price) => price.currency === currency
-                          )?.amount * item.amount
+                          )?.amount
                         ).toFixed(2)}
                       </p>
                     )}
