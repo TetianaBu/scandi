@@ -5,15 +5,17 @@ export class Attributes extends Component {
   renderAttributeButton({ attributeItem, attribute, selected }) {
     let style = {};
     let text = attributeItem.value;
+    let color;
     if (attribute.id === 'Color') {
       style = { background: attributeItem.value, color: attributeItem.value };
       text = attributeItem.displayValue;
+      color = "color";
     }
 
     return (
       <button
         key={attributeItem.value}
-        className={selected ? 'selected' : ''}
+        className={`${selected ? 'selected' : ''} ${color}`}
         style={style}
         onClick={() =>
           this.props.onAttributeSelect({

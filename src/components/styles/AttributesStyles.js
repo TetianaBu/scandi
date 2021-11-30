@@ -6,7 +6,7 @@ export const AttrStyles = styled.div`
     height: 45px;
     border: 1px solid var(--primary-dark);
     margin-right: 0.5rem;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.3rem;
     background-color: white;
     color: var(--primary-dark);
     :hover {
@@ -19,11 +19,18 @@ export const AttrStyles = styled.div`
     }
   }
   .attr-wrapper p {
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.3rem;
   }
   .selected {
     background-color: var(--primary-dark);
     color: white;
+  }
+  .color {
+    border: 1px solid var(--light-grey);
+  }
+  .color.selected {
+    border: 3px solid  var(--primary-dark);
+    transform: scale(1.1);
   }
 `;
 
