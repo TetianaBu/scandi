@@ -6,6 +6,7 @@ import {
 import { CurrencyContext } from '../currencies/CurrencyContext';
 import { CartContext } from '../cart/CartContext';
 import { getCurrencySymbol } from '../../lib/currency';
+import { setDefaultAttr } from '../../lib/setDefaultAttr';
 import ProductDescriptionImg from './ProductDescriptionImg';
 import Description from './Description';
 import Attributes from './Attributes';
@@ -28,16 +29,7 @@ class Product extends React.Component {
     const attributes = this.props.product?.attributes;
     if (attributes) {
       this.setState({
-        selectedAttributes: Object.fromEntries(
-          attributes.map((attribute) => [
-            attribute.id,
-            {
-              attribute,
-              value: attribute.items[0]?.value,
-              displayValue: attribute.items[0]?.displayValue
-            }
-          ])
-        )
+        selectedAttributes: setDefaultAttr(attributes)
       });
     }
   }

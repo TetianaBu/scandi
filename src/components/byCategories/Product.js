@@ -8,6 +8,7 @@ import emptyCart from '../../assets/icons/emptyWhiteCart.svg';
 import { CurrencyContext } from '../currencies/CurrencyContext';
 import { CartContext } from '../cart/CartContext';
 import { getCurrencySymbol } from '../../lib/currency';
+import { setDefaultAttr } from '../../lib/setDefaultAttr';
 import { NavLink } from 'react-router-dom';
 import { OutOfStockStyles } from '../styles/OutOfStockStyles';
 
@@ -24,16 +25,7 @@ export class Product extends Component {
     const attributes = this.props.product?.attributes;
     if (attributes) {
       this.setState({
-        selectedAttributes: Object.fromEntries(
-          attributes.map((attribute) => [
-            attribute.id,
-            {
-              attribute,
-              value: attribute.items[0]?.value,
-              displayValue: attribute.items[0]?.displayValue
-            }
-          ])
-        )
+        selectedAttributes: setDefaultAttr(attributes)
       });
     }
   }
