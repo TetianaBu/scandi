@@ -15,15 +15,15 @@ const ALL_PRODUCTS_BY_CATEGORY = gql`
         inStock
         brand
         attributes {
-        name
-        type
-        id
-        items {
-          displayValue
-          value
+          name
+          type
           id
+          items {
+            displayValue
+            value
+            id
+          }
         }
-      }
       }
     }
   }
