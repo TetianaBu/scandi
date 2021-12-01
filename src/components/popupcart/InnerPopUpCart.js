@@ -1,7 +1,7 @@
 import React from 'react';
 import { getCurrencySymbol } from '../../lib/currency';
 import ActionBtns from './ActionBtns';
-import ItemInCart from './ItemInCart';
+import ProductInCart from './ProductInCart';
 
 class InnerPopUpCart extends React.Component {
   onClick = (event) => {
@@ -63,7 +63,7 @@ class InnerPopUpCart extends React.Component {
         {amount > 0 && (
           <div className="item-pop-up-cart">
             {itemsAddedToCart.map((item, index) => (
-              <ItemInCart
+              <ProductInCart
                 item={item}
                 key={index}
                 addItemToCart={addItemToCart}

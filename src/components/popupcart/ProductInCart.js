@@ -1,13 +1,13 @@
 import React from 'react';
-import { ItemInCartStyles, AmountWrapper } from '../styles/PopUpCartStyles';
+import { ProductInCartStyles, AmountWrapper } from '../styles/PopUpCartStyles';
 import { getCurrencySymbol } from '../../lib/currency';
 import AttributesInCart from '../cart/AttributesInCart';
 
-export default class ItemInCart extends React.Component {
+class ProductInCart extends React.Component {
   render() {
     const { currency, addItemToCart, removeItemFromCart, item } = this.props;
     return (
-      <ItemInCartStyles>
+      <ProductInCartStyles>
         <div className="item-description">
           <div>
             <div className="titles-wrapper">
@@ -42,7 +42,9 @@ export default class ItemInCart extends React.Component {
             className="img-cart"
           />
         </div>
-      </ItemInCartStyles>
+      </ProductInCartStyles>
     );
   }
 }
+
+export default ProductInCart;

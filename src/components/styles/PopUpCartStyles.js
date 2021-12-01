@@ -57,7 +57,7 @@ export const ActionBtnStyles = styled.div`
   }
 `;
 
-export const ItemInCartStyles = styled.div`
+export const ProductInCartStyles = styled.div`
   display: grid;
   grid-template-columns: 146px 140px;
   min-height: 177px;
