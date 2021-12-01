@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
-export const ProductItemStyles = styled.article`
+export const ProductStyles = styled.article`
   display: grid;
+  width: 386px;
   max-height: 444px;
   padding: 2rem 1rem;
   position: relative;
@@ -25,16 +26,17 @@ export const ProductItemStyles = styled.article`
   }
 `;
 
-export const ItemImageWrapper = styled.div`
+export const ProductImageWrapper = styled.div`
   margin-bottom: 0.5rem;
   position: relative;
-  .item-img {
-    height: 338px;
+  .product-img {
+    height: 330px;
+    width: 354px;
     object-fit: cover;
   }
 `;
 
-export const ProductItemButton = styled.button`
+export const ProductBtn = styled.button`
   background-color: var(--primary-light);
   border-radius: 50%;
   height: 52px;
@@ -42,7 +44,7 @@ export const ProductItemButton = styled.button`
   border: none;
   position: absolute;
   top: 90%;
-  left: 86.5%;
+  left: 82%;
   cursor: pointer;
   visibility: hidden;
   .cart-svg {

@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import {
-  ProductItemStyles,
-  ItemImageWrapper,
-  ProductItemButton
-} from '../styles/ProductItemStyles';
+  ProductStyles,
+  ProductImageWrapper,
+  ProductBtn
+} from '../styles/ProductStyles';
 import emptyCart from '../../assets/icons/emptyWhiteCart.svg';
 import { CurrencyContext } from '../currencies/CurrencyContext';
 import { getCurrencySymbol } from '../../lib/currency';
 import { NavLink } from 'react-router-dom';
 import { OutOfStockStyles } from '../styles/OutOfStockStyles';
 
-export class ProductItem extends Component {
+export class Product extends Component {
   getPriceByCurrency = (currency) => {
     const { prices } = this.props.product;
     return prices.find((price) => price.currency === currency)?.amount;
@@ -25,14 +25,14 @@ export class ProductItem extends Component {
       gallery: [firstImage]
     } = this.props.product;
     return (
-      <ProductItemStyles>
+      <ProductStyles>
         <NavLink to={`/${category}/${id}`}>
-          <ItemImageWrapper>
-            <img src={firstImage} className="item-img" alt={name} />
-            <ProductItemButton>
+          <ProductImageWrapper>
+            <img src={firstImage} className="product-img" alt={name} />
+            <ProductBtn>
               <img src={emptyCart} alt="cart" className="cart-svg" />
-            </ProductItemButton>
-          </ItemImageWrapper>
+            </ProductBtn>
+          </ProductImageWrapper>
           <p className="product-title">
             {name} <span>{brand}</span>
           </p>
@@ -46,9 +46,9 @@ export class ProductItem extends Component {
           </CurrencyContext.Consumer>
           {!inStock && <OutOfStockStyles>OUT OF STOCK</OutOfStockStyles>}
         </NavLink>
-      </ProductItemStyles>
+      </ProductStyles>
     );
   }
 }
 
-export default ProductItem;
+export default Product;
