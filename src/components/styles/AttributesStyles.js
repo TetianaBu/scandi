@@ -40,7 +40,7 @@ export const AttrInPopUpCartStyles = styled.div`
   p {
     display: grid;
     min-width: 45px;
-    margin-bottom: 0.3rem;
+    margin-top: 0.3rem;
     span {
       font-size: 10px;
       padding: 2px 4px;

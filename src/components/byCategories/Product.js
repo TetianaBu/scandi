@@ -6,15 +6,38 @@ import {
 } from '../styles/ProductStyles';
 import emptyCart from '../../assets/icons/emptyWhiteCart.svg';
 import { CurrencyContext } from '../currencies/CurrencyContext';
+import { CartContext } from '../cart/CartContext';
 import { getCurrencySymbol } from '../../lib/currency';
 import { NavLink } from 'react-router-dom';
 import { OutOfStockStyles } from '../styles/OutOfStockStyles';
 
 export class Product extends Component {
+  state = {
+    selectedAttributes: {}
+  };
   getPriceByCurrency = (currency) => {
     const { prices } = this.props.product;
     return prices.find((price) => price.currency === currency)?.amount;
   };
+
+  componentDidMount() {
+    const attributes = this.props.product?.attributes;
+    if (attributes) {
+      this.setState({
+        selectedAttributes: Object.fromEntries(
+          attributes.map((attribute) => [
+            attribute.id,
+            {
+              attribute,
+              value: attribute.items[0]?.value,
+              displayValue: attribute.items[0]?.displayValue
+            }
+          ])
+        )
+      });
+    }
+  }
+
   render() {
     const { category } = this.props;
     const {
@@ -26,13 +49,28 @@ export class Product extends Component {
     } = this.props.product;
     return (
       <ProductStyles>
-        <NavLink to={`/${category}/${id}`}>
-          <ProductImageWrapper>
+        <ProductImageWrapper>
+          <NavLink to={`/${category}/${id}`}>
             <img src={firstImage} className="product-img" alt={name} />
-            <ProductBtn>
-              <img src={emptyCart} alt="cart" className="cart-svg" />
-            </ProductBtn>
-          </ProductImageWrapper>
+          </NavLink>
+
+          <CartContext.Consumer>
+            {({ addItemToCart }) => (
+              <ProductBtn
+                onClick={() =>
+                  addItemToCart(
+                    this.props.product,
+                    this.state.selectedAttributes
+                  )
+                }
+                disabled={!inStock}
+              >
+                <img src={emptyCart} alt="cart" className="cart-svg" />
+              </ProductBtn>
+            )}
+          </CartContext.Consumer>
+        </ProductImageWrapper>
+        <NavLink to={`/${category}/${id}`}>
           <p className="product-title">
             {name} <span>{brand}</span>
           </p>
@@ -44,8 +82,13 @@ export class Product extends Component {
               </p>
             )}
           </CurrencyContext.Consumer>
-          {!inStock && <OutOfStockStyles>OUT OF STOCK</OutOfStockStyles>}
         </NavLink>
+
+        {!inStock && (
+          <NavLink to={`/${category}/${id}`}>
+            <OutOfStockStyles>OUT OF STOCK</OutOfStockStyles>{' '}
+          </NavLink>
+        )}
       </ProductStyles>
     );
   }

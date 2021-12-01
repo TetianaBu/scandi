@@ -25,6 +25,7 @@ export const PopUpCartStyles = styled.div`
     margin: 0;
     padding-bottom: 0;
   }
+
   .total-amount-wrapper {
     display: flex;
     justify-content: space-between;
@@ -81,7 +82,7 @@ export const ProductInCartStyles = styled.div`
     flex-direction: column;
     align-items: flex-start;
     align-content: flex-start;
-    justify-content: flex-start;
+    justify-content: space-between;
     min-height: 137px;
   }
   .titles-wrapper {
@@ -92,7 +93,7 @@ export const ProductInCartStyles = styled.div`
       font-size: 16px;
     }
     h4 {
-      margin-bottom: 10px;
+      margin-bottom: 5px;
     }
   }
 `;
