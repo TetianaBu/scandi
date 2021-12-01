@@ -56,7 +56,7 @@ export const AmountWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   button {
-    background-color: white;
+    background-color: var(--white);
     height: 45px;
     width: 45px;
     font-size: 24px;

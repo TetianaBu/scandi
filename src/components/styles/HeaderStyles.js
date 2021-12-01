@@ -18,13 +18,13 @@ export const CartCurrencyStyles = styled.div`
   .cart-wrapper {
     position: relative;
     padding-right: 1rem;
-    background-color: white;
+    background-color: var(--white);
     border: none;
   }
   .items-amount {
     position: absolute;
     background-color: var(--primary-dark);
-    color: white;
+    color: var(--white);
     font-weight: 700;
     font-size: 12px;
     border-radius: 50%;

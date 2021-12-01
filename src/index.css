@@ -4,6 +4,7 @@
   --primary-dark: #1D1F22;
   --light-grey: #8D8F9A;
   --grey: #393748;
+  --white: #ffffff;
 }
 
 @font-face {
@@ -11,23 +12,19 @@
   src: url("./assets/fonts/Raleway-Regular.ttf") format("ttf");
   font-weight: normal;
 }
-
 @font-face {
   font-family: 'Raleway';
   src: url("./assets/fonts/Raleway-Bold.ttf") format("ttf");
   font-weight: bold;
 }
-
 @font-face {
   font-family: 'Raleway';
   src: url("./assets/fonts/Raleway-SemiBold.ttf") format("ttf");
 }
-
 @font-face {
   font-family: 'Roboto';
   src: url("./assets/fonts/Roboto-Regular.ttf") format("ttf");
 }
-
 @font-face {
   font-family: 'SourceSansPro';
   src: url("./assets/fonts/SourceSansPro-Regular.ttf") format("ttf");

@@ -7,11 +7,11 @@ export const AttrStyles = styled.div`
     border: 1px solid var(--primary-dark);
     margin-right: 0.5rem;
     margin-bottom: 0.3rem;
-    background-color: white;
+    background-color: var(--white);
     color: var(--primary-dark);
     :hover {
       background-color: var(--primary-dark);
-      color: white;
+      color: var(--white);
     }
     &[disabled] {
       opacity: 0.5;
@@ -23,7 +23,7 @@ export const AttrStyles = styled.div`
   }
   .selected {
     background-color: var(--primary-dark);
-    color: white;
+    color: var(--white);
   }
   .color {
     border: 1px solid var(--light-grey);
@@ -44,11 +44,9 @@ export const AttrInPopUpCartStyles = styled.div`
     span {
       font-size: 10px;
       padding: 2px 4px;
-      color: white;
+      color: var(--white);
       text-align: center;
       background-color: var(--primary-dark);
-    }
-    .width {
     }
   }
 `;

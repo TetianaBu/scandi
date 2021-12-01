@@ -25,14 +25,14 @@ export const CurrenctSwitcherStyles = styled.div`
   }
   label:hover {
     background-color: var(--primary-dark);
-    color: white;
+    color: var(--white);
   }
 `;
 
 export const CurrenciesBtn = styled.button`
   display: flex;
   align-items: center;
-  background-color: white;
+  background-color: var(--white);
   border: none;
   font-size: 18px;
   line-height: 28.8px;

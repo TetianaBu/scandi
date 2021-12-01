@@ -14,7 +14,7 @@ export const PopUpCartStyles = styled.div`
   flex-direction: column;
   width: 325px;
   position: absolute;
-  background-color: white;
+  background-color: var(--white);
   top: 0;
   right: 3rem;
   padding: 0 16px;
@@ -48,13 +48,13 @@ export const ActionBtnStyles = styled.div`
     text-transform: uppercase;
   }
   .btn-view-bag {
-    background-color: white;
+    background-color: var(--white);
     border: 1px solid var(--primary-dark);
   }
   .btn-check-out {
     background-color: var(--primary-light);
     border: none;
-    color: white;
+    color: var(--white);
   }
 `;
 
@@ -101,7 +101,7 @@ export const SizesButtonStyles = styled.div`
   display: flex;
   flex-direction: row;
   button {
-    background-color: white;
+    background-color: var(--white);
     height: 24px;
     width: 24px;
     font-size: 14px;
@@ -118,7 +118,7 @@ export const AmountWrapper = styled.div`
   justify-content: space-between;
   margin-right: 10px;
   button {
-    background-color: white;
+    background-color: var(--white);
     height: 24px;
     width: 24px;
     font-size: 14px;

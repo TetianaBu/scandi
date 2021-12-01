@@ -11,7 +11,7 @@ export const ProductDescriptionStyles = styled.div`
   .add-btn {
     background-color: var(--primary-light);
     border: none;
-    color: white;
+    color: var(--white);
     font-size: 16px;
     line-height: 19px;
     text-transform: uppercase;
