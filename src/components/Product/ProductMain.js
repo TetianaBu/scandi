@@ -2,7 +2,7 @@ import React from 'react';
 import { Query } from '@apollo/client/react/components';
 import PRODUCT_DETAILED_DESCRIPTION from '../../apollo/productDetailedDescriptionQuery';
 import { Redirect } from 'react-router-dom';
-import Product from './Product';
+import ProductInner from './ProductInner';
 
 class ProductMain extends React.Component {
   render() {
@@ -16,7 +16,7 @@ class ProductMain extends React.Component {
             if (!data.product) {
               return <Redirect to="/404"/>;
             }
-            return <Product product={data.product} />;
+            return <ProductInner product={data.product} />;
           }
         }}
       </Query>

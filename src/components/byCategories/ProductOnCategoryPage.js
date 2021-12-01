@@ -12,7 +12,7 @@ import { setDefaultAttr } from '../../lib/setDefaultAttr';
 import { NavLink } from 'react-router-dom';
 import { OutOfStockStyles } from '../styles/OutOfStockStyles';
 
-export class Product extends Component {
+export class ProductOnCategoryPage extends Component {
   state = {
     selectedAttributes: {}
   };
@@ -86,4 +86,4 @@ export class Product extends Component {
   }
 }
 
-export default Product;
+export default ProductOnCategoryPage;

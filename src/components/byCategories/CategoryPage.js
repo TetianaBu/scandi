@@ -2,7 +2,7 @@ import { Component } from 'react';
 import { Query } from '@apollo/client/react/components';
 import { CartContext } from '../cart/CartContext';
 import { Redirect } from 'react-router-dom';
-import Product from './Product';
+import ProductOnCategoryPage from './ProductOnCategoryPage';
 import CategoryPageStyles from '../styles/CategoryPageStyles';
 import ALL_PRODUCTS_BY_CATEGORY from '../../apollo/allProductsByCategoryQuery';
 
@@ -28,7 +28,7 @@ class CategoryPage extends Component {
               return (
                 <div className="category-page-inner-grid">
                   {products.map((product) => (
-                    <Product
+                    <ProductOnCategoryPage
                       product={product}
                       key={product.id}
                       category={category}

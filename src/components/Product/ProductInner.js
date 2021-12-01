@@ -11,7 +11,7 @@ import ProductDescriptionImg from './ProductDescriptionImg';
 import Description from './Description';
 import Attributes from './Attributes';
 
-class Product extends React.Component {
+class ProductInner extends React.Component {
   state = {
     selectedAttributes: {}
   };
@@ -90,4 +90,4 @@ class Product extends React.Component {
   }
 }
 
-export default Product;
+export default ProductInner;
