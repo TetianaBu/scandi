@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Header from './navigation/Header';
 import CategoryPage from './byCategories/CategoryPage';
-import ProductMain from './product/ProductMain';
-import Cart from './cart/Cart';
+import ProductMain from './Product/ProductMain';
+import Cart from './Cart/Cart';
 import Start from './StartPage';
 import NotFound from './NotFound';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { CurrencyContext } from '../currencies/CurrencyContext';
-import { CartContext } from '../cart/CartContext';
+import { CartContext } from '../Cart/CartContext';
 import InnerPopUpCart from './InnerPopUpCart';
 import { PopUpCartStyles, OuterWrapper } from '../styles/PopUpCartStyles';
 

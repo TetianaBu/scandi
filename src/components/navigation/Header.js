@@ -8,7 +8,7 @@ import logo from '../../assets/icons/logo.svg';
 import emptyCart from '../../assets/icons/emptyCart.svg';
 import CurrenciesList from '../currencies/CurrencySwitcher';
 import { NavLink } from 'react-router-dom';
-import { CartContext } from '../cart/CartContext';
+import { CartContext } from '../Cart/CartContext';
 import PopUpCart from '../popupcart/PopUpCart';
 import Nav from './Nav';
 

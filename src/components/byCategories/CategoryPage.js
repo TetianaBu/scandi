@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { Query } from '@apollo/client/react/components';
-import { CartContext } from '../cart/CartContext';
+import { CartContext } from '../Cart/CartContext';
 import { Redirect } from 'react-router-dom';
 import ProductOnCategoryPage from './ProductOnCategoryPage';
 import CategoryPageStyles from '../styles/CategoryPageStyles';

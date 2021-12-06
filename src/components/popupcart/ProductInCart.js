@@ -1,7 +1,7 @@
 import React from 'react';
 import { ProductInCartStyles, AmountWrapper } from '../styles/PopUpCartStyles';
 import { getCurrencySymbol } from '../../lib/currency';
-import AttributesInCart from '../cart/AttributesInCart';
+import AttributesInCart from '../Cart/AttributesInCart';
 
 class ProductInCart extends React.Component {
   render() {
